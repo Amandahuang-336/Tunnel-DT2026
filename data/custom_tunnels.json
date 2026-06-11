@@ -1,0 +1,40 @@
+{
+  "tunnels": [
+    {
+      "tunnel_id": "TUN-C",
+      "label": "bnj j",
+      "length_m": 3498,
+      "rings_total": 2185,
+      "ring_length_m": 1.6,
+      "max_depth_m": 25,
+      "alignment": [
+        [
+          -37.83,
+          144.92
+        ],
+        [
+          -37.815,
+          144.955
+        ]
+      ],
+      "portals": {
+        "west": {
+          "coords": [
+            -37.83,
+            144.92
+          ],
+          "label": "bnj j \u2014 start portal"
+        },
+        "east": {
+          "coords": [
+            -37.815,
+            144.955
+          ],
+          "label": "bnj j \u2014 end portal"
+        }
+      },
+      "colour": "#534AB7",
+      "custom": true
+    }
+  ]
+}
