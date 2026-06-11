@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(py -3.13 -c \"import importlib.util as u; mods=['streamlit','pandas','rdflib','owlrl','plotly','pypdf','docx','folium','streamlit_folium','matplotlib','requests']; [print\\(f'{m:18}', 'OK' if u.find_spec\\(m\\) else 'MISSING'\\) for m in mods]\")"
+    ]
+  }
+}
