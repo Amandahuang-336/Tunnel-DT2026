@@ -28,8 +28,8 @@ from streamlit_folium import st_folium
 from utils.ontology_loader import load_ontology, load_defects
 from utils.styling import apply_custom_css
 from utils.gis import build_overview_map, list_tunnels
+from utils.explainers import render_plain_guide, render_priority_cost_help
 
-st.set_page_config(page_title="Defect Register", layout="wide")
 apply_custom_css()
 
 if "graph" not in st.session_state:
@@ -51,6 +51,13 @@ st.caption(
     "actions — primarily downloading the selected subset. A subtle "
     "delete option is available at the bottom of the page."
 )
+
+render_plain_guide(
+    "The master to-do list: every defect, mapped and ranked. **HIGH** "
+    "= action within 30 days. Open **Defect Detail** for a case file, "
+    "or download the filtered list for reporting."
+)
+render_priority_cost_help()
 
 defects = list(st.session_state.defects)
 ingested_count = sum(1 for d in defects if d.get("ingested"))
