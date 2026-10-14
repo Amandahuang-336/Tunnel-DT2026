@@ -1,0 +1,16 @@
+{
+  "title": "Tunnel-DT2026: reference build of a prescriptive road-tunnel maintenance digital twin",
+  "upload_type": "software",
+  "description": "<p>Shared data and code supporting the paper <em>Serviceability-oriented multimodal data integration for prescriptive road-tunnel maintenance digital twins</em> (Tunnelling and Underground Space Technology). Contents: an OWL 2 maintenance ontology aligned with AASHTO DCRT, Austroads RADS and COBie; a standards-governance module; six expert-reviewed FMEA chains extracted from AASHTO DCRT Chapter 16; SPARQL realisations of the 31 competency questions; and the Streamlit reference build with Docker packaging. Demonstration data describe two fictitious tunnels. Multimodal sensing data from the case-study tunnel are subject to operator confidentiality and are not included.</p>",
+  "creators": [
+    {"name": "Huang, Mengqi", "affiliation": "Swinburne University of Technology"},
+    {"name": "Rouhani, Mohammad Matin", "affiliation": "Monash University"},
+    {"name": "Li, Zhihang", "affiliation": "Monash University"},
+    {"name": "Zhu, Huamei", "affiliation": "Durham University"},
+    {"name": "Zhang, Qian-Bing", "affiliation": "Monash University"}
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": ["digital twin", "tunnel maintenance", "ontology", "OWL 2", "FMEA", "multimodal inspection", "SPARQL", "COBie"],
+  "language": "eng"
+}
