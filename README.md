@@ -1,7 +1,5 @@
 # Tunnel-DT2026
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23381120.svg)](https://doi.org/10.5281/zenodo.23381120)
-
 Tunnel-DT2026 is the reference build of a serviceability-oriented, prescriptive
 digital twin for road-tunnel maintenance. It links an OWL 2 ontology of AASHTO
 DCRT, Austroads RADS and COBie to a seven-level FMEA reasoning chain, maps four
@@ -19,8 +17,7 @@ This repository accompanies the paper
 and contains the shared data and code supporting it: the ontologies, the
 extracted FMEA chains, the SPARQL realisations of all 31 competency questions,
 and the Streamlit reference build described in Section 5.2. To cite it, see
-[`CITATION.cff`](CITATION.cff); the software is archived on Zenodo,
-DOI [10.5281/zenodo.23381120](https://doi.org/10.5281/zenodo.23381120).
+[`CITATION.cff`](CITATION.cff).
 
 The software is a research demonstration. Its outputs are decision support at
 the level of intervention category; they do not replace the specifying
