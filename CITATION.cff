@@ -3,6 +3,7 @@ message: "If you use this software or data, please cite the paper below."
 title: "Tunnel-DT2026: reference build of a prescriptive road-tunnel maintenance digital twin"
 type: software
 version: 1.0.0
+doi: 10.5281/zenodo.23381120
 date-released: 2026-10-14
 license: MIT
 repository-code: "https://github.com/Amandahuang-336/Tunnel-DT2026"
