@@ -1,0 +1,22 @@
+# CQ-12  What potential cause does the thermal anomaly indicate?
+# Scenario 2: Thermal anomaly triggers investigation of hidden moisture path
+# Category: Defect
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-1247-L
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?thermalFinding ?potentialCause ?mechanism
+WHERE {
+    tun:{DEFECT_ID} tun:hasIndicator ?i .
+    ?i tun:isDetectedWith tun:Technique-Thermal ;
+       tun:hasValue ?thermalFinding .
+    OPTIONAL { tun:{DEFECT_ID} tun:hasCause/rdfs:label ?potentialCause . }
+    OPTIONAL { tun:{DEFECT_ID} tun:hasMechanism/rdfs:label ?mechanism . }
+}

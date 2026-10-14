@@ -1,0 +1,21 @@
+[theme]
+primaryColor = "#534AB7"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5F4EF"
+textColor = "#2C2C2A"
+font = "sans serif"
+
+[server]
+port = 8501
+headless = false
+runOnSave = true
+# Cap uploads (scan meshes / point clouds / inspection photos). The default
+# 200 MB lets a single file exhaust memory on this single-process app; the
+# scan importer subsamples for display but still parses the whole file.
+maxUploadSize = 25
+
+[browser]
+gatherUsageStats = false
+
+[logger]
+level = "info"

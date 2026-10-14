@@ -1,0 +1,55 @@
+{
+  "_README": [
+    "Regression corpus — governance mechanism (e).",
+    "",
+    "A fixed set of defect cases with EXPERT-ADJUDICATED expected tiers,",
+    "re-run whenever the ontology, controlled vocabularies, rules, or the",
+    "extraction engine change. A changed prescription must be explained and",
+    "signed off before the knowledge base is released.",
+    "",
+    "THIS FILE SHIPS EMPTY ON PURPOSE.",
+    "The expected tier of a case is an engineering adjudication, not a",
+    "value the software can supply for itself. Seeding it from whatever the",
+    "knowledge base currently returns would make the corpus a tautology: it",
+    "would pass by construction and detect nothing. Each case must be",
+    "adjudicated by a reviewer and recorded here with their name.",
+    "",
+    "COVERAGE THAT ACTUALLY DETECTS REGRESSIONS",
+    "Boundary cases carry the diagnostic load. For every numeric threshold,",
+    "include one case below it, one at it, and one above it — those are what",
+    "catch a silently altered comparison operator or limit. A corpus of",
+    "typical cases confirms no gross breakage but rarely finds anything.",
+    "Also include: one case per FMEA chain; one of each conflict type",
+    "(severity, extent, cause); one ambiguous identity match that must route",
+    "to adjudication rather than merge; and one whose measurement interval",
+    "straddles a threshold and must resolve to Investigation_Required.",
+    "",
+    "Full schema: see the manuscript supplementary material,",
+    "regression_corpus.schema.json"
+  ],
+
+  "corpus_version": "rc-0.0.0-empty",
+  "threshold_set_id": null,
+  "adjudicated_by": [],
+
+  "_case_template": {
+    "case_id": "RC-0001",
+    "category": "boundary_at",
+    "provenance": "field_case | synthetic | field_case_perturbed",
+    "defect_class": "Spalls",
+    "as_of": "2024-03-15",
+    "inputs": {
+      "indicator_type": "rebar_section_loss_pct",
+      "value": 30,
+      "unit": "%"
+    },
+    "expected": {
+      "tier": "Action_Required",
+      "must_route_to_adjudication": false
+    },
+    "adjudicated_by": "<reviewer name>",
+    "adjudicated_on": "<yyyy-mm-dd>"
+  },
+
+  "cases": []
+}

@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the paper below."
+title: "Tunnel-DT2026: reference build of a prescriptive road-tunnel maintenance digital twin"
+type: software
+version: 1.0.0
+date-released: 2026-10-14
+license: MIT
+repository-code: "https://github.com/Amandahuang-336/Tunnel-DT2026"
+keywords:
+  - digital twin
+  - tunnel maintenance
+  - ontology
+  - OWL 2
+  - FMEA
+  - multimodal inspection
+  - SPARQL
+authors:
+  - family-names: Huang
+    given-names: Mengqi
+  - family-names: Rouhani
+    given-names: Mohammad Matin
+  - family-names: Li
+    given-names: Zhihang
+  - family-names: Zhu
+    given-names: Huamei
+  - family-names: Zhang
+    given-names: Qian-Bing
+    email: qianbing.zhang@monash.edu
+preferred-citation:
+  type: article
+  title: "Serviceability-oriented multimodal data integration for prescriptive road-tunnel maintenance digital twins"
+  journal: "Tunnelling and Underground Space Technology"
+  year: 2026
+  status: in-press
+  authors:
+    - family-names: Huang
+      given-names: Mengqi
+    - family-names: Rouhani
+      given-names: Mohammad Matin
+    - family-names: Li
+      given-names: Zhihang
+    - family-names: Zhu
+      given-names: Huamei
+    - family-names: Zhang
+      given-names: Qian-Bing

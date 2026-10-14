@@ -1,0 +1,815 @@
+[
+  {
+    "fmea_chain_id": "FMEA-COR-CONC-SPALL-01",
+    "source_documents": ["AASHTO_DCRT_Ch16"],
+    "extraction_notes": "Primary chain from Ch16 Sections 16.2, 16.4. Spall classifications S-1 through S-4 from standardized coding. Rebar section loss threshold of 30% explicitly stated in Section 16.4.3. Intervention steps from Sections 16.4.2-16.4.5.",
+
+    "component": {
+      "component_id": "COMP-LIN-CONC-01",
+      "component_name": "Concrete Tunnel Lining",
+      "component_category": "Lining",
+      "material_system": "Concrete lining (rebar, embedded steel)",
+      "material_subtype": null
+    },
+
+    "mechanism": {
+      "mechanism_id": "MECH-COR-01",
+      "mechanism_category": "Corrosion",
+      "mechanism_description": "Corrosion of embedded reinforcing steel due to chloride ingress, carbonation, or moisture penetration, leading to expansion of corrosion products, cracking, delamination, and spalling of cover concrete"
+    },
+
+    "defect": {
+      "defect_id": "DEF-COR-SPALL-01",
+      "defect_name": "Spalls/delamination with exposed corroded rebar and section loss",
+      "defect_description": "Concrete spalling and delamination exposing corroded reinforcement with measurable section loss. Spalls and delaminations may occur in concert and are almost always found in association with structural cracks.",
+      "severity_levels": [
+        {
+          "severity_code": "S-1",
+          "severity_label": "Shallow spall",
+          "severity_description": "Concrete spall less than 2 inches deep, no exposed rebar",
+          "condition_grade": null
+        },
+        {
+          "severity_code": "S-2",
+          "severity_label": "Spall to reinforcing steel",
+          "severity_description": "Concrete spall to the depth of reinforcing steel, rebar exposed",
+          "condition_grade": null
+        },
+        {
+          "severity_code": "S-3",
+          "severity_label": "Spall behind reinforcing steel",
+          "severity_description": "Concrete spall extending behind the reinforcing steel layer",
+          "condition_grade": null
+        },
+        {
+          "severity_code": "S-4",
+          "severity_label": "Special concrete spall",
+          "severity_description": "Special category spall requiring detailed engineering assessment",
+          "condition_grade": null
+        }
+      ]
+    },
+
+    "indicators": [
+      {
+        "indicator_id": "IND-COR-SPALL-AREA-01",
+        "indicator_name": "Spall surface area",
+        "indicator_type": "Dimensional",
+        "unit": "sq ft",
+        "measurement_method": "Visual condition survey with area measurement",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Per inspection cycle",
+        "coding_system": null
+      },
+      {
+        "indicator_id": "IND-COR-SPALL-DEPTH-01",
+        "indicator_name": "Spall depth",
+        "indicator_type": "Dimensional",
+        "unit": "inches",
+        "measurement_method": "Direct measurement of depth from original surface to base of spall",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Per inspection cycle",
+        "coding_system": null
+      },
+      {
+        "indicator_id": "IND-COR-REBAR-LOSS-01",
+        "indicator_name": "Rebar section loss percentage",
+        "indicator_type": "Dimensional",
+        "unit": "%",
+        "measurement_method": "Measurement of remaining rebar cross-section compared to design diameter after cleaning to white metal",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "When exposed rebar is observed during repair",
+        "coding_system": null
+      },
+      {
+        "indicator_id": "IND-COR-SPALL-MOIST-01",
+        "indicator_name": "Moisture state at defect",
+        "indicator_type": "Visual",
+        "unit": "categorical",
+        "measurement_method": "Standardised visual condition survey using US leakage coding system",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Each inspection cycle",
+        "coding_system": [
+          {"code": "D", "term": "Dry", "description": "Structural defect illustrates no signs of moisture"},
+          {"code": "M", "term": "Moist", "description": "Discoloration of the surface of the lining, moist to touch"},
+          {"code": "PM", "term": "Past Moisture", "description": "Area showing indications of previous wetness, calcification etc."},
+          {"code": "GS", "term": "Glistening Surface", "description": "Visible movement of a film of water across a surface"},
+          {"code": "F", "term": "Flowing", "description": "Continuous flow of water from a defect; requires volume measurement"}
+        ]
+      },
+      {
+        "indicator_id": "IND-COR-SPALL-REBAR-CODE-01",
+        "indicator_name": "Rebar exposure code",
+        "indicator_type": "Visual",
+        "unit": "categorical",
+        "measurement_method": "Visual identification of reinforcing steel exposure and estimated section loss percentage",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Each inspection cycle",
+        "coding_system": [
+          {"code": "R-1", "term": "Rebar exposed, no section loss", "description": "Reinforcing steel visible but no measurable corrosion loss"},
+          {"code": "R-2", "term": "Rebar exposed with section loss", "description": "Reinforcing steel visible with estimated percentage section loss documented"}
+        ]
+      }
+    ],
+
+    "cause": {
+      "cause_id": "CAUSE-GW-COR-01",
+      "cause_description": "Groundwater intrusion and moisture (M, GS, F conditions), often with chlorides or carbonation leading to rust, expansion, cracking, delamination, and spalling. Also documented instances from impact, insufficient concrete cover, or poor quality control.",
+      "cause_category": "Groundwater",
+      "contributing_factors": [
+        "Chloride concentration in groundwater",
+        "Carbonation depth progression",
+        "Inadequate concrete cover over reinforcing steel",
+        "Poor quality control of workmanship or materials",
+        "Vehicle impact damage"
+      ],
+      "inference_confidence": "Established"
+    },
+
+    "thresholds": [
+      {
+        "threshold_id": "THRESH-COR-REBAR-30PCT",
+        "indicator_ref": "IND-COR-REBAR-LOSS-01",
+        "threshold_value": "> 30%",
+        "threshold_unit": "% rebar section loss",
+        "threshold_type": "Action_Required",
+        "threshold_consequence": "Structural analysis must be performed. If results indicate inadequate strength with remaining steel, damaged steel must be replaced.",
+        "escalation_condition": null,
+        "source_reference": "AASHTO DCRT Ch16 Section 16.4.3"
+      },
+      {
+        "threshold_id": "THRESH-COR-SPALL-S2",
+        "indicator_ref": "IND-COR-SPALL-DEPTH-01",
+        "threshold_value": "Spall depth reaching reinforcing steel (S-2 classification)",
+        "threshold_unit": "depth classification",
+        "threshold_type": "Action_Required",
+        "threshold_consequence": "Requires rebar cleaning, coating, and shotcrete/mortar repair with welded wire mesh",
+        "escalation_condition": "Progression from S-1 to S-2 indicates active corrosion requiring immediate attention",
+        "source_reference": "AASHTO DCRT Ch16 Section 16.4"
+      }
+    ],
+
+    "intervention": {
+      "intervention_id": "INT-COR-CONC-REPAIR-01",
+      "intervention_name": "Concrete patch repair with rebar treatment and shotcrete",
+      "intervention_category": "Repair",
+      "intervention_steps": [
+        "Remove all unsound concrete using chipping hammers (limited to less than 30 lbs including bit to prevent over-excavation of concrete above 4000 psi) or hydro-demolition. Do not use hydro-demolition near electrical equipment, cables, or mechanical equipment.",
+        "Ensure no feather edges at repair boundaries; maintain vertical shoulder of at least 1/8 inch to prevent spalling at edge of new repair.",
+        "Seal any leaking cracks or construction joints with chemical grout (single component polyurethane recommended) prior to rebar coating and shotcrete application.",
+        "Clean all reinforcing steel and exposed structural steel elements to white metal commercial grade.",
+        "Evaluate rebar for section loss. If loss exceeds 30%, perform structural analysis. If analysis shows inadequate strength, replace damaged bars using mechanical couplers (not lap splices).",
+        "Apply zinc-rich coating to cleaned steel within 48 hours of cleaning and not more than 30 days prior to shotcrete application. Zinc-rich preferred over epoxy as it does not form a bond-breaker.",
+        "For small shallow spalls (< 2 sq ft, S-1): Apply polymer modified hand patch mortar in lifts of 1 to 2 inches, keyed into substrate using J-hooks and welded wire mesh.",
+        "For larger/deeper repairs (S-2, S-3, S-4): Place hot-dipped galvanized welded wire mesh over repair area to within 2 inches of repair edge, attached to existing rebar and substrate using J-hooks. Use 2x2 inch mesh for dry process shotcrete, 4x4 inch mesh for wet process.",
+        "Apply polymer modified fibrous shotcrete (wet process for partial tunnel closures due to low dust; dry process only for full closures). Nozzleman and crew must be tested and certified on site mock-ups.",
+        "Allow shotcrete to cure 20-30 minutes then screed and trowel to desired finish. Do not work surface prematurely. Monitor drying rate as times vary with wind and humidity.",
+        "Apply curing compound to surface of new shotcrete per manufacturer recommendation to prevent rapid drying."
+      ],
+      "materials_required": [
+        "Chipping hammers (<30 lbs including bit) or hydro-demolition equipment",
+        "Chemical grout - single component polyurethane (for leak sealing)",
+        "Zinc-rich coating (for rebar/steel protection)",
+        "Mechanical couplers (if rebar replacement needed)",
+        "Polymer modified hand patch mortar (for small repairs <2 sq ft)",
+        "Hot-dipped galvanized welded wire mesh (2x2 inch for dry process, 4x4 inch for wet process)",
+        "J-hooks (for mesh attachment)",
+        "Prepackaged polymer modified fibrous shotcrete",
+        "Curing compound"
+      ],
+      "constraints": [
+        "Chipping hammers must be less than 30 lbs including bit to prevent over-excavation",
+        "No feather edges permitted; minimum 1/8 inch vertical shoulder at repair boundary",
+        "Zinc-rich coating must be applied within 48 hours of steel cleaning",
+        "Shotcrete must be applied within 30 days of zinc coating application",
+        "Use mechanical couplers for rebar replacement, never lap splices",
+        "Wet process shotcrete required when partial tunnel closure allows traffic during repair",
+        "Dry process shotcrete only suitable for full tunnel closures due to dust",
+        "Nozzleman must be certified via on-site mock-up testing before production work",
+        "Hydro-demolition prohibited near electrical equipment, cables, or mechanical equipment"
+      ],
+      "applicable_severity": ["S-1", "S-2", "S-3", "S-4"],
+      "source_reference": "AASHTO DCRT Ch16 Sections 16.4.1-16.4.5"
+    }
+  },
+
+  {
+    "fmea_chain_id": "FMEA-LEAK-CONC-CRACK-01",
+    "source_documents": ["AASHTO_DCRT_Ch16"],
+    "extraction_notes": "From Ch16 Section 16.3. Covers groundwater intrusion through cracks and joints. Table 16-1 provides leakage coding. Table 16-2 provides grout selection matrix. Grout selection depends on width, moisture content, and potential for movement.",
+
+    "component": {
+      "component_id": "COMP-LIN-CONC-02",
+      "component_name": "Concrete Tunnel Lining - Joints and Cracks",
+      "component_category": "Lining",
+      "material_system": "Cast-in-place or precast concrete lining",
+      "material_subtype": null
+    },
+
+    "mechanism": {
+      "mechanism_id": "MECH-LEAK-01",
+      "mechanism_category": "Leakage_Water",
+      "mechanism_description": "Groundwater intrusion through construction joints, liner gaskets, and full-depth cracks in the tunnel liner. May be aggravated by hydrostatic pressure, seasonal variation, and crack/joint movement."
+    },
+
+    "defect": {
+      "defect_id": "DEF-LEAK-CRACK-01",
+      "defect_name": "Leaking cracks and joints in tunnel liner",
+      "defect_description": "Full-depth cracks or failed construction joints allowing groundwater infiltration ranging from surface moisture to continuous flowing water. Uncontrolled and excessive water accelerates corrosion and deterioration of the tunnel liner.",
+      "severity_levels": [
+        {
+          "severity_code": "D",
+          "severity_label": "Dry",
+          "severity_description": "Structural defect illustrates no signs of moisture",
+          "condition_grade": null
+        },
+        {
+          "severity_code": "PM",
+          "severity_label": "Past Moisture",
+          "severity_description": "Area showing indications of previous wetness, calcification etc.",
+          "condition_grade": null
+        },
+        {
+          "severity_code": "M",
+          "severity_label": "Moist",
+          "severity_description": "Discoloration of the surface of the lining, moist to touch",
+          "condition_grade": null
+        },
+        {
+          "severity_code": "GS",
+          "severity_label": "Glistening Surface",
+          "severity_description": "Visible movement of a film of water across a surface",
+          "condition_grade": null
+        },
+        {
+          "severity_code": "F",
+          "severity_label": "Flowing",
+          "severity_description": "Continuous flow of water from a defect; requires volume measurement",
+          "condition_grade": null
+        }
+      ]
+    },
+
+    "indicators": [
+      {
+        "indicator_id": "IND-LEAK-MOIST-STATE-01",
+        "indicator_name": "Leakage moisture state",
+        "indicator_type": "Visual",
+        "unit": "categorical (D/PM/M/GS/F)",
+        "measurement_method": "Visual condition survey using standardised US leakage coding (Table 16-1)",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Each inspection cycle",
+        "coding_system": [
+          {"code": "D", "term": "Dry", "description": "Structural defect illustrates no signs of moisture"},
+          {"code": "M", "term": "Moist", "description": "Discoloration of the surface of the lining, moist to touch"},
+          {"code": "PM", "term": "Past Moisture", "description": "Area showing indications of previous wetness, calcification etc."},
+          {"code": "GS", "term": "Glistening Surface", "description": "Visible movement of a film of water across a surface"},
+          {"code": "F", "term": "Flowing", "description": "Continuous flow of water from a defect; requires volume measurement"}
+        ]
+      },
+      {
+        "indicator_id": "IND-LEAK-FLOW-RATE-01",
+        "indicator_name": "Water flow volume",
+        "indicator_type": "Dimensional",
+        "unit": "volume per time (project specific)",
+        "measurement_method": "Volume measurement required for Flowing (F) classification",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "When flowing water is identified",
+        "coding_system": null
+      },
+      {
+        "indicator_id": "IND-LEAK-CRACK-WIDTH-01",
+        "indicator_name": "Crack width",
+        "indicator_type": "Dimensional",
+        "unit": "mm or inches",
+        "measurement_method": "Direct measurement of crack opening",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Each inspection cycle; monitor for movement over time if structural rebonding is considered",
+        "coding_system": null
+      },
+      {
+        "indicator_id": "IND-LEAK-JOINT-MOVEMENT-01",
+        "indicator_name": "Joint/crack movement",
+        "indicator_type": "Deformation",
+        "unit": "mm or inches",
+        "measurement_method": "Monitor the defect for a period of time sufficient to allow estimation of actual movement. Crack gages or repeated measurement.",
+        "measurement_technique": "Convergence_Monitoring",
+        "measurement_frequency": "Continuous monitoring if movement suspected",
+        "coding_system": null
+      }
+    ],
+
+    "cause": {
+      "cause_id": "CAUSE-GW-LEAK-01",
+      "cause_description": "Groundwater pressure acting on tunnel liner through construction joints, failed gaskets, or full-depth structural cracks. Site-specific factors include pH, hardness, chemical composition, and turbidity of groundwater, as well as physical conditions that created the defect, potential for freeze-thaw, and hydrostatic head.",
+      "cause_category": "Groundwater",
+      "contributing_factors": [
+        "Hydrostatic pressure from external groundwater",
+        "Failed or damaged liner gaskets",
+        "Construction joint defects",
+        "Crack/joint movement (thermal, structural, or settlement-induced)",
+        "Seasonal variation in groundwater level",
+        "Chemical composition of groundwater (pH, chlorides, hardness)"
+      ],
+      "inference_confidence": "Established"
+    },
+
+    "thresholds": [
+      {
+        "threshold_id": "THRESH-LEAK-GS",
+        "indicator_ref": "IND-LEAK-MOIST-STATE-01",
+        "threshold_value": "GS (Glistening Surface) or F (Flowing)",
+        "threshold_unit": "moisture state code",
+        "threshold_type": "Action_Required",
+        "threshold_consequence": "Active water ingress requires sealing with chemical grout injection. Grout selection dependent on moisture content, movement potential, and crack width.",
+        "escalation_condition": "Progression from M to GS or F indicates increasing hydrostatic pressure or expanding defect",
+        "source_reference": "AASHTO DCRT Ch16 Section 16.3"
+      },
+      {
+        "threshold_id": "THRESH-LEAK-MOVEMENT",
+        "indicator_ref": "IND-LEAK-JOINT-MOVEMENT-01",
+        "threshold_value": "Any measurable movement in crack or joint",
+        "threshold_unit": "presence/absence of movement",
+        "threshold_type": "Investigation_Required",
+        "threshold_consequence": "If movement detected: only chemical grout is appropriate (particle grout will fracture and leak will reappear). Structural cracks with settlement that are no longer moving may be structurally rebonded.",
+        "escalation_condition": null,
+        "source_reference": "AASHTO DCRT Ch16 Sections 16.3.2, 16.5"
+      }
+    ],
+
+    "intervention": {
+      "intervention_id": "INT-LEAK-GROUT-01",
+      "intervention_name": "Chemical grout injection for leak sealing",
+      "intervention_category": "Waterproofing_Remediation",
+      "intervention_steps": [
+        "Assess site-specific conditions: pH, hardness, chemical composition, turbidity of groundwater; physical conditions of defect; movement potential; water inflow rate.",
+        "If movement of crack/joint is suspected, monitor the defect for a sufficient period to estimate actual movement.",
+        "Select grout type based on conditions: (a) For active wet cracks/joints with movement: single component water-reactive polyurethane (hydrophilic if seasonally wet but currently dry; hydrophobic if chemical catalyst preferred). (b) For dry, non-moving defects: epoxy grout for structural rebonding. (c) Particle grouts only for formation grouting outside liner or very large dry cracks.",
+        "Drill injection holes at 45-degree angle through the defect, spaced alternately on either side at a distance equal to half the thickness of the structural element.",
+        "Flush all holes with water to clean debris and clean crack/joint sides prior to injection to ensure proper bonding.",
+        "Install mechanical packers in injection ports.",
+        "Seal surface of crack with low-modulus gel if crack is actively leaking.",
+        "Inject grout into lowest mechanical packer using hand-operated hydraulic pump until grout is seen at next injection port up.",
+        "Repeat process progressively upward until entire crack is injected.",
+        "Regrouting may be performed up to one week after initial grouting if needed."
+      ],
+      "materials_required": [
+        "Single component water-reactive polyurethane grout (hydrophilic or hydrophobic per conditions)",
+        "Acrylate grout (alternative for semi-flexible, no-shrinkage applications)",
+        "Epoxy grout (for dry, non-moving structural cracks only)",
+        "Mechanical packers (injection ports)",
+        "Low-modulus gel (for surface sealing of actively leaking cracks)",
+        "Hand-operated hydraulic pump",
+        "Drill with 5/8 inch (15mm) diameter bit"
+      ],
+      "constraints": [
+        "Only chemical grout (not particle grout) for joints/cracks with movement — particle grout will fracture",
+        "Hydrophilic grout requires water to catalyse — introduce water into defect if dry at time of repair",
+        "Structural rebonding of cracks requires prior monitoring to confirm no ongoing movement",
+        "Vinyl ester resin NOT suitable for damp/wet cracks in tunnels — use amine or polyester resin instead",
+        "Regrouting permitted up to one week after initial injection"
+      ],
+      "applicable_severity": ["M", "GS", "F"],
+      "source_reference": "AASHTO DCRT Ch16 Sections 16.3.1-16.3.2, Table 16-2"
+    }
+  },
+
+  {
+    "fmea_chain_id": "FMEA-COR-STEEL-SEG-01",
+    "source_documents": ["AASHTO_DCRT_Ch16"],
+    "extraction_notes": "From Ch16 Section 16.6.2. Covers steel and cast iron segmental liners. Defects include deformed flanges, through-corrosion, and galvanic corrosion at bolted connections. Repair methods differ for steel (weldable post-1923) vs cast iron (not weldable).",
+
+    "component": {
+      "component_id": "COMP-LIN-STEEL-SEG-01",
+      "component_name": "Steel/Cast Iron Segmental Liner",
+      "component_category": "Lining",
+      "material_system": "Steel or cast-iron segmental lining",
+      "material_subtype": "Steel (weldable if post-1923) or Cast Iron (not weldable)"
+    },
+
+    "mechanism": {
+      "mechanism_id": "MECH-COR-02",
+      "mechanism_category": "Corrosion",
+      "mechanism_description": "Corrosion of steel or cast iron segmental liner plates and flanges, including through-corrosion of liner plate and galvanic corrosion at bolted connections due to dissimilar metal contact"
+    },
+
+    "defect": {
+      "defect_id": "DEF-COR-STEEL-PENETRATION-01",
+      "defect_name": "Through-corrosion / holes in liner plates and deformed/corroded flanges",
+      "defect_description": "Penetration of the liner segment due to rusting through; deformed flanges from corrosion or impact; galvanic corrosion at bolted connections caused by dissimilar metal contact",
+      "severity_levels": "NOT_GRADED"
+    },
+
+    "indicators": [
+      {
+        "indicator_id": "IND-COR-STEEL-PENETRATION-01",
+        "indicator_name": "Liner plate penetration (through-corrosion)",
+        "indicator_type": "Visual",
+        "unit": "presence/absence, area of section loss",
+        "measurement_method": "Visual inspection for holes, section loss area estimation",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Per inspection cycle",
+        "coding_system": null
+      },
+      {
+        "indicator_id": "IND-COR-STEEL-FLANGE-01",
+        "indicator_name": "Flange deformation and corrosion",
+        "indicator_type": "Visual",
+        "unit": "categorical (deformed/corroded/intact)",
+        "measurement_method": "Visual inspection of flange condition and bolt connections",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Per inspection cycle",
+        "coding_system": null
+      }
+    ],
+
+    "cause": {
+      "cause_id": "CAUSE-COR-STEEL-01",
+      "cause_description": "Corrosive tunnel environment causing rusting of steel/cast iron plates. Galvanic corrosion at bolted connections caused by dissimilar metal contact between high-strength bolt and liner plate.",
+      "cause_category": "Chemical_Exposure",
+      "contributing_factors": [
+        "Tunnel moisture and humidity",
+        "Dissimilar metal contact at bolted connections",
+        "Groundwater chemistry",
+        "Installation damage (flange deformation)",
+        "Vehicle impact damage"
+      ],
+      "inference_confidence": "Established"
+    },
+
+    "thresholds": [
+      {
+        "threshold_id": "THRESH-COR-STEEL-PENETRATION",
+        "indicator_ref": "IND-COR-STEEL-PENETRATION-01",
+        "threshold_value": "Any through-corrosion or holes in liner plate",
+        "threshold_unit": "presence",
+        "threshold_type": "Action_Required",
+        "threshold_consequence": "Repair required: weld new plate (steel post-1923) or braze/bolt repair plate (cast iron)",
+        "escalation_condition": null,
+        "source_reference": "AASHTO DCRT Ch16 Section 16.6.2"
+      }
+    ],
+
+    "intervention": {
+      "intervention_id": "INT-COR-STEEL-SEG-01",
+      "intervention_name": "Steel/cast iron segmental liner repair",
+      "intervention_category": "Repair",
+      "intervention_steps": [
+        "For deformed flanges: reshape flanges with hammers or heat.",
+        "For holes in STEEL segments (post-1923, weldable): weld on a new plate per AWS D1.1 Structural Welding Code.",
+        "For holes in CAST IRON segments (not weldable): braze repair plate to cast iron, OR drill and tap the liner segment and bolt the repair plate to the original segment. Alternative: fill area between flanges with shotcrete.",
+        "For corroded bolted connections with galvanic corrosion: replace entire bolted connection. Install nylon isolation gasket to prevent contact between high-strength bolt and liner plate. Use nylon washers on both sides and plastic sleeve.",
+        "All welded repairs must comply with AWS D1.1/D1.1 Structural Welding Code. All bolted repairs must comply with AASHTO specifications."
+      ],
+      "materials_required": [
+        "Steel repair plate (1/2 inch minimum per detail)",
+        "Nylon isolation gaskets and washers",
+        "Plastic sleeve (3/4-inch ID per detail)",
+        "High-strength replacement bolts with washers and nuts",
+        "Lead seal (for edge sealing)",
+        "Shotcrete (alternative for cast iron infill)",
+        "Brazing materials (for cast iron)"
+      ],
+      "constraints": [
+        "Cast iron cannot be welded — must use brazing or bolted repair plates",
+        "Steel weldable only if manufactured after 1923",
+        "Nylon isolation gasket required at all replacement bolted connections to prevent galvanic corrosion",
+        "All welding per AWS D1.1, all bolting per AASHTO specification"
+      ],
+      "applicable_severity": ["NOT_GRADED"],
+      "source_reference": "AASHTO DCRT Ch16 Section 16.6.2"
+    }
+  },
+
+  {
+    "fmea_chain_id": "FMEA-COR-HANG-FAIL-01",
+    "source_documents": ["AASHTO_DCRT_Ch16"],
+    "extraction_notes": "From Ch16 Section 16.10. Covers suspended ceiling hangers — a safety-critical component (Sasago tunnel collapse reference in presentation). FHWA Technical Advisory 2008 discourages adhesive anchors for permanent sustained tension or overhead applications.",
+
+    "component": {
+      "component_id": "COMP-CEIL-HANG-01",
+      "component_name": "Ceiling Hangers and Hardware",
+      "component_category": "Structure",
+      "material_system": "Steel hanger rods, clevises, turnbuckles, pins, and anchors (cast-in-place inserts or post-installed mechanical/adhesive anchors)",
+      "material_subtype": null
+    },
+
+    "mechanism": {
+      "mechanism_id": "MECH-COR-03",
+      "mechanism_category": "Corrosion",
+      "mechanism_description": "Corrosion and deterioration of ceiling hanger rods, clevises, turnbuckles, connection pins, and anchor connections in tunnel environment. Adhesive (chemical) anchors may lose capacity over time under sustained tension in overhead applications."
+    },
+
+    "defect": {
+      "defect_id": "DEF-HANG-FAIL-01",
+      "defect_name": "Corroded/broken hanger components and failed anchor connections",
+      "defect_description": "Broken or damaged hanger rods, clevises, turnbuckles, or connection pins. Failed or loose connections at tunnel arch, particularly adhesive anchors under sustained overhead tension.",
+      "severity_levels": "NOT_GRADED"
+    },
+
+    "indicators": [
+      {
+        "indicator_id": "IND-HANG-RING-TEST-01",
+        "indicator_name": "Hanger ringing test",
+        "indicator_type": "Acoustic",
+        "unit": "categorical (rings / does not ring)",
+        "measurement_method": "Strike each hanger with a mason's hammer. A hanger in tension will vibrate or ring like a bell. A hanger not in tension (due to connection or other defect) will not ring.",
+        "measurement_technique": "AcousticEmission",
+        "measurement_frequency": "Each inspection cycle — rigorous and regular inspection program recommended considering importance and redundancy",
+        "coding_system": [
+          {"code": "RING", "term": "Rings", "description": "Hanger vibrates or rings like a bell after being struck — indicates hanger is in tension"},
+          {"code": "NO_RING", "term": "Does not ring", "description": "Hanger does not vibrate after being struck — indicates lack of tension due to connection defect or other failure"}
+        ]
+      },
+      {
+        "indicator_id": "IND-HANG-VISUAL-01",
+        "indicator_name": "Visual condition of hanger components",
+        "indicator_type": "Visual",
+        "unit": "categorical",
+        "measurement_method": "Close visual inspection of hanger rod, clevis, turnbuckle, pins, and anchor connection for corrosion, breakage, deformation",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Each inspection cycle",
+        "coding_system": null
+      }
+    ],
+
+    "cause": {
+      "cause_id": "CAUSE-HANG-COR-01",
+      "cause_description": "Corrosive tunnel environment degrading steel hanger components. For adhesive (chemical) anchors: potential loss of capacity under sustained tension in overhead applications due to creep, moisture intrusion, or improper installation.",
+      "cause_category": "Chemical_Exposure",
+      "contributing_factors": [
+        "Tunnel moisture and corrosive atmosphere",
+        "Adhesive anchor creep under sustained overhead tension",
+        "Improper installation of anchors",
+        "Vehicle impact on hanging components",
+        "Fatigue from ventilation-induced vibration"
+      ],
+      "inference_confidence": "Established"
+    },
+
+    "thresholds": [
+      {
+        "threshold_id": "THRESH-HANG-NO-RING",
+        "indicator_ref": "IND-HANG-RING-TEST-01",
+        "threshold_value": "NO_RING (does not ring when struck)",
+        "threshold_unit": "acoustic test result",
+        "threshold_type": "Investigation_Required",
+        "threshold_consequence": "Hangers that exhibit a defect or lack of tension should be closely inspected and checked for structural suitability.",
+        "escalation_condition": "Multiple adjacent hangers failing ring test may indicate systemic anchor failure",
+        "source_reference": "AASHTO DCRT Ch16 Section 16.10"
+      }
+    ],
+
+    "intervention": {
+      "intervention_id": "INT-HANG-REPAIR-01",
+      "intervention_name": "Ceiling hanger component replacement and anchor remediation",
+      "intervention_category": "Replacement",
+      "intervention_steps": [
+        "For broken/damaged hanger rod, clevis, turnbuckle, or connection pins: replace with similar components.",
+        "For failed adhesive (chemical) anchors: replace with undercut mechanical anchors (per FHWA Technical Advisory 2008 which strongly discourages adhesive anchors for permanent sustained tension or overhead applications).",
+        "Any use of adhesive anchors must conform to current FHWA directives and other applicable codes and regulations.",
+        "Verify replacement hanger is in tension using ringing test after installation."
+      ],
+      "materials_required": [
+        "Replacement hanger rods, clevises, turnbuckles, connection pins",
+        "Undercut mechanical anchors (to replace failed adhesive anchors)",
+        "Mason's hammer (for ringing test verification)"
+      ],
+      "constraints": [
+        "FHWA Technical Advisory 2008 strongly discourages adhesive anchors for permanent sustained tension or overhead applications",
+        "All replacement anchors should be undercut mechanical type",
+        "Rigorous and regular inspection program must consider importance and redundancy of hanger system"
+      ],
+      "applicable_severity": ["NOT_GRADED"],
+      "source_reference": "AASHTO DCRT Ch16 Section 16.10, FHWA Technical Advisory 2008"
+    }
+  },
+
+  {
+    "fmea_chain_id": "FMEA-CRACK-CONC-STRUCT-01",
+    "source_documents": ["AASHTO_DCRT_Ch16"],
+    "extraction_notes": "From Ch16 Section 16.5. Covers structural cracking in concrete tunnel liners. Key distinction: thermal/shrinkage cracks should NOT be structurally rebonded (they will re-crack). Only structural cracks from settlement etc. that are no longer moving should be rebonded.",
+
+    "component": {
+      "component_id": "COMP-LIN-CONC-03",
+      "component_name": "Concrete Tunnel Lining - Structural Cracks",
+      "component_category": "Lining",
+      "material_system": "Cast-in-place or precast concrete lining",
+      "material_subtype": null
+    },
+
+    "mechanism": {
+      "mechanism_id": "MECH-STRUCT-CRACK-01",
+      "mechanism_category": "Structural_Movement_Overload",
+      "mechanism_description": "Structural cracking due to stresses not accounted for in design (e.g., differential settlement, structural overload). Distinct from thermal/shrinkage cracks which are non-structural."
+    },
+
+    "defect": {
+      "defect_id": "DEF-CRACK-STRUCT-01",
+      "defect_name": "Structural cracks in concrete tunnel liner",
+      "defect_description": "Cracks resulting from structural movement such as settlement. Most common defect found in concrete tunnel liners. Must be distinguished from thermal/shrinkage cracks which should not be structurally rebonded.",
+      "severity_levels": "NOT_GRADED"
+    },
+
+    "indicators": [
+      {
+        "indicator_id": "IND-CRACK-MOVEMENT-01",
+        "indicator_name": "Crack movement monitoring",
+        "indicator_type": "Deformation",
+        "unit": "mm or inches",
+        "measurement_method": "Crack gages (grid type for visual monitoring or electrical LVDT type for remote/real-time monitoring). Any crack considered for structural rebonding must be monitored to assess if movement is occurring.",
+        "measurement_technique": "Convergence_Monitoring",
+        "measurement_frequency": "Continuous or periodic monitoring sufficient to determine if crack is active or dormant",
+        "coding_system": null
+      },
+      {
+        "indicator_id": "IND-CRACK-TYPE-01",
+        "indicator_name": "Crack type classification",
+        "indicator_type": "Visual",
+        "unit": "categorical",
+        "measurement_method": "Engineering assessment to distinguish thermal/shrinkage cracks from structural cracks. Structural analysis of tunnel lining should be performed.",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "At initial identification and per inspection cycle",
+        "coding_system": [
+          {"code": "CR-1", "term": "Structural crack", "description": "Crack resulting from structural movement such as settlement"},
+          {"code": "CR-T", "term": "Thermal/shrinkage crack", "description": "Crack resulting from thermal activity or shrinkage — not suitable for structural rebonding"}
+        ]
+      }
+    ],
+
+    "cause": {
+      "cause_id": "CAUSE-STRUCT-CRACK-01",
+      "cause_description": "Structural stresses not accounted for in the original design, such as differential settlement, structural overload, or ground movement. Distinct from thermal/shrinkage stresses.",
+      "cause_category": "Settlement",
+      "contributing_factors": [
+        "Differential settlement",
+        "Ground movement from adjacent construction",
+        "Structural overload",
+        "Design deficiency"
+      ],
+      "inference_confidence": "Probable"
+    },
+
+    "thresholds": [
+      {
+        "threshold_id": "THRESH-CRACK-DORMANT",
+        "indicator_ref": "IND-CRACK-MOVEMENT-01",
+        "threshold_value": "No measurable movement over monitoring period (crack is dormant)",
+        "threshold_unit": "movement status",
+        "threshold_type": "Action_Required",
+        "threshold_consequence": "Dormant structural crack may be structurally rebonded with epoxy resin injection. A structural analysis of the tunnel lining should be performed to ascertain if rebonding is required.",
+        "escalation_condition": null,
+        "source_reference": "AASHTO DCRT Ch16 Section 16.5"
+      },
+      {
+        "threshold_id": "THRESH-CRACK-ACTIVE",
+        "indicator_ref": "IND-CRACK-MOVEMENT-01",
+        "threshold_value": "Any measurable ongoing movement",
+        "threshold_unit": "movement status",
+        "threshold_type": "Investigation_Required",
+        "threshold_consequence": "DO NOT structurally rebond — crack will re-crack. Treat with flexible chemical grout if leaking. Investigate root cause of ongoing movement.",
+        "escalation_condition": "Active structural movement may indicate ongoing settlement requiring geotechnical investigation",
+        "source_reference": "AASHTO DCRT Ch16 Section 16.5"
+      }
+    ],
+
+    "intervention": {
+      "intervention_id": "INT-CRACK-REBOND-01",
+      "intervention_name": "Structural crack rebonding with epoxy resin injection",
+      "intervention_category": "Repair",
+      "intervention_steps": [
+        "Confirm crack is dormant (no ongoing movement) through monitoring period.",
+        "Perform structural analysis to ascertain if crack requires rebonding.",
+        "Select appropriate resin: Amine or Polyester resin preferred for tunnel work (both unaffected by moisture and bond to surface-saturated concrete). Vinyl ester resin only suitable if crack is completely dry.",
+        "Install injection ports at approximately 300mm (12 inch) spacing along crack, starting at lower elevation.",
+        "Seal surface of crack with epoxy sealer between injection ports.",
+        "Inject resin into lowest port using hydraulic pump until resin appears at next port above.",
+        "Progress injection upward, filling consecutively to opposite end of crack.",
+        "Follow manufacturer recommendations, particularly for overhead installations.",
+        "Cracks with flowing water must be carefully injected per manufacturer guidance."
+      ],
+      "materials_required": [
+        "Amine resin (preferred for damp/wet tunnel cracks)",
+        "Polyester resin (alternative for damp/wet tunnel cracks)",
+        "Vinyl ester resin (only for completely dry cracks)",
+        "Injection ports with mechanical packers",
+        "Epoxy sealer (for surface sealing between ports)",
+        "Hydraulic injection pump"
+      ],
+      "constraints": [
+        "NEVER structurally rebond thermal/shrinkage cracks — they will re-crack",
+        "NEVER structurally rebond actively moving cracks",
+        "Vinyl ester resin will NOT bond to surface-saturated concrete — not suitable for damp/wet cracks",
+        "Monitoring period required before rebonding to confirm dormancy",
+        "Structural analysis must confirm rebonding is necessary",
+        "Follow manufacturer recommendations for overhead installations"
+      ],
+      "applicable_severity": ["NOT_GRADED"],
+      "source_reference": "AASHTO DCRT Ch16 Section 16.5"
+    }
+  },
+
+  {
+    "fmea_chain_id": "FMEA-ROCK-FALL-UNLINED-01",
+    "source_documents": ["AASHTO_DCRT_Ch16"],
+    "extraction_notes": "From Ch16 Section 16.9. Covers unlined rock tunnels where rock reinforcement elements deteriorate or rock fragments become loose and fall.",
+
+    "component": {
+      "component_id": "COMP-ROCK-UNLINED-01",
+      "component_name": "Unlined Rock Tunnel (rock mass and reinforcement)",
+      "component_category": "Structure",
+      "material_system": "Rock reinforcement (rock dowels, rock bolts, cable bolts) with resin or cementitious grout in competent rock",
+      "material_subtype": null
+    },
+
+    "mechanism": {
+      "mechanism_id": "MECH-COR-ROCK-REINF-01",
+      "mechanism_category": "Corrosion",
+      "mechanism_description": "Rock reinforcement elements (bolts, dowels, cables) deteriorate and lose strength due to corrosive tunnel environment and exposure. Rock fragments also become loose over time and drop onto roadway."
+    },
+
+    "defect": {
+      "defect_id": "DEF-ROCK-FALL-01",
+      "defect_name": "Deteriorated rock reinforcement and falling rock fragments",
+      "defect_description": "Rock reinforcement elements losing strength due to corrosion, and loose rock fragments falling from tunnel roof and walls onto roadway",
+      "severity_levels": "NOT_GRADED"
+    },
+
+    "indicators": [
+      {
+        "indicator_id": "IND-ROCK-LOOSE-01",
+        "indicator_name": "Loose rock presence",
+        "indicator_type": "Visual",
+        "unit": "categorical (present/absent)",
+        "measurement_method": "Visual inspection and sounding of tunnel roof and walls for loose rock",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Periodic inspection",
+        "coding_system": null
+      },
+      {
+        "indicator_id": "IND-ROCK-REINF-COND-01",
+        "indicator_name": "Rock reinforcement condition",
+        "indicator_type": "Visual",
+        "unit": "categorical",
+        "measurement_method": "Visual assessment of bolt heads, plates, and exposed elements for corrosion. Requires engineering geologist or geotechnical engineer with geologic mapping experience.",
+        "measurement_technique": "Visual",
+        "measurement_frequency": "Periodic detailed investigation",
+        "coding_system": null
+      }
+    ],
+
+    "cause": {
+      "cause_id": "CAUSE-ROCK-DETERIOR-01",
+      "cause_description": "Corrosive tunnel environment causing deterioration of rock reinforcement elements. Natural weathering and stress relief causing loosening of rock fragments over time.",
+      "cause_category": "Chemical_Exposure",
+      "contributing_factors": [
+        "Corrosive tunnel atmosphere",
+        "Groundwater exposure",
+        "Rock mass discontinuities",
+        "Weathering and stress relief",
+        "Vibration from traffic"
+      ],
+      "inference_confidence": "Established"
+    },
+
+    "thresholds": [
+      {
+        "threshold_id": "THRESH-ROCK-LOOSE-PRESENT",
+        "indicator_ref": "IND-ROCK-LOOSE-01",
+        "threshold_value": "Loose rock fragments identified on roof or walls",
+        "threshold_unit": "presence",
+        "threshold_type": "Action_Required",
+        "threshold_consequence": "Scale (remove) all loose rock from tunnel roof and walls. Consider additional reinforcement measures.",
+        "escalation_condition": null,
+        "source_reference": "AASHTO DCRT Ch16 Section 16.9"
+      }
+    ],
+
+    "intervention": {
+      "intervention_id": "INT-ROCK-REINF-01",
+      "intervention_name": "Rock scaling and reinforcement replacement",
+      "intervention_category": "Rehabilitation",
+      "intervention_steps": [
+        "Perform detailed investigation of structural geology by engineering geologist or geotechnical engineer with experience in geologic mapping and rock stability analysis.",
+        "Scale (remove) all loose rock from tunnel roof and walls using backhoe or hoe ram on periodic basis.",
+        "Replace deteriorated rock reinforcement elements (bolts, dowels, cables) with new elements grouted with resin or cementitious grout.",
+        "Alternative containment measures: install steel liner roof as shelter, additional rock bolts with wire mesh to contain falling fragments, or apply shotcrete to areas of concern."
+      ],
+      "materials_required": [
+        "New rock bolts, dowels, or cable bolts (typically 5-20 feet length)",
+        "Resin or cementitious grout for bolt installation",
+        "Wire mesh (for fragment containment)",
+        "Shotcrete (for surface stabilisation)",
+        "Steel liner roof sections (for shelter installation)",
+        "Backhoe or hoe ram (for scaling)"
+      ],
+      "constraints": [
+        "Rock reinforcement replacement requires detailed structural geology investigation",
+        "Investigation must be performed by engineering geologist or geotechnical engineer with geologic mapping experience",
+        "Rock stability analysis per Chapter 6 methodology required"
+      ],
+      "applicable_severity": ["NOT_GRADED"],
+      "source_reference": "AASHTO DCRT Ch16 Section 16.9"
+    }
+  }
+]

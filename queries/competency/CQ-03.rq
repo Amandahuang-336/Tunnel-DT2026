@@ -1,0 +1,23 @@
+# CQ-03  Which FMEA chain levels have sensor evidence for this defect?
+# Scenario 1: Crack with moisture detected during quarterly inspection
+# Category: Multimodal
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-1247-L
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?level (GROUP_CONCAT(DISTINCT ?technique; separator=", ") AS ?techniques)
+WHERE {
+    tun:{DEFECT_ID} tun:hasIndicator ?indicator .
+    ?indicator tun:atFMEALevel ?level ;
+               tun:isDetectedWith/rdfs:label ?technique .
+    FILTER(?level != tun:FMEAChainLevel)
+}
+GROUP BY ?level
+ORDER BY ?level

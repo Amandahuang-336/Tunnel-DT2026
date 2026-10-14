@@ -1,0 +1,23 @@
+# CQ-18  What are all active defects in a given tunnel section?
+# Scenario 3: Prioritisation across multiple defects in a tunnel section
+# Category: Asset
+# Parameters: {CH_FROM}, {CH_TO}
+# Defaults:   CH_FROM=600, CH_TO=1000
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?defect ?type ?chainage ?ringID
+WHERE {
+    ?defect tun:atChainage ?chainage ;
+            tun:hasType ?type ;
+            tun:hasThreshold/tun:status "Activated" .
+    OPTIONAL { ?defect tun:atRingID ?ringID . }
+    FILTER(?chainage >= {CH_FROM} && ?chainage <= {CH_TO})
+}
+ORDER BY ?chainage

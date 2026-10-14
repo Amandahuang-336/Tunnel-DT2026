@@ -1,0 +1,24 @@
+# CQ-20  Which defects exceed the serviceability threshold?
+# Scenario 3: Prioritisation across multiple defects in a tunnel section
+# Category: Compliance
+# Parameters: none
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+# Activated thresholds at the Action Required tier or above.
+SELECT ?defect ?chainage ?criterion ?tier
+WHERE {
+    ?defect tun:hasThreshold ?t ;
+            tun:atChainage ?chainage .
+    ?t tun:status "Activated" ;
+       tun:tier ?tier .
+    OPTIONAL { ?t rdfs:label ?criterion . }
+    FILTER(?tier IN (tun:Action_Required, tun:Emergency))
+}
+ORDER BY ?chainage

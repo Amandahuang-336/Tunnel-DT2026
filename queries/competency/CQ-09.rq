@@ -1,0 +1,31 @@
+# CQ-09  Is the cause of the crack known, or is it inferred?
+# Scenario 1: Crack with moisture detected during quarterly inspection
+# Category: Multimodal
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-0923-C
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+# "observed" when a sensor indicator sits at the cause or structure level
+# of the chain; otherwise the cause is inferred from the defect class and
+# the source standard.
+SELECT ?cause ?basis ?causeEvidence
+WHERE {
+    tun:{DEFECT_ID} tun:hasCause/rdfs:label ?cause .
+    {
+        SELECT (GROUP_CONCAT(DISTINCT ?technique; separator=", ") AS ?causeEvidence)
+        WHERE {
+            tun:{DEFECT_ID} tun:hasIndicator ?i .
+            ?i tun:atFMEALevel ?lvl ;
+               tun:isDetectedWith/rdfs:label ?technique .
+            FILTER(?lvl IN (tun:PotentialCauseLevel, tun:StructureLevel))
+        }
+    }
+    BIND(IF(?causeEvidence != "", "observed", "inferred") AS ?basis)
+}

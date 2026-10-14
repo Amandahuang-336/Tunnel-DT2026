@@ -1,0 +1,49 @@
+# CQ-31  For a given defect type, what is the minimum set of modalities needed for a completeness score >= 3/4?
+# Scenario 5: Modality limitation awareness
+# Category: Multimodal
+# Parameters: {DEFECT_TYPE}
+# Defaults:   DEFECT_TYPE=Spalls
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+# Enumerates modality sets of size 1-3, drops sets containing a modality
+# the TBox says cannot detect the defect type, and keeps sets that reach
+# at least three of the four evidence levels. The first rows are minimal.
+SELECT ?setSize ?modalitySet ?levelsCovered
+WHERE {
+    {
+        SELECT ?setSize ?modalitySet (COUNT(DISTINCT ?lvl) AS ?levelsCovered)
+        WHERE {
+            VALUES ?m1 { "RGB" "RGBD" "Thermal" "GPR" }
+            VALUES ?m2 { "RGB" "RGBD" "Thermal" "GPR" }
+            VALUES ?m3 { "RGB" "RGBD" "Thermal" "GPR" }
+            FILTER(?m1 <= ?m2 && ?m2 <= ?m3)
+            VALUES (?mod ?lvl) {
+                ("RGB" "defect")
+                ("RGBD" "defect") ("RGBD" "indicator")
+                ("Thermal" "cause") ("Thermal" "indicator")
+                ("GPR" "structure") ("GPR" "indicator")
+            }
+            FILTER(?mod IN (?m1, ?m2, ?m3))
+            FILTER NOT EXISTS {
+                ?modClass tun:cannotDetect tun:{DEFECT_TYPE} .
+                FILTER(?modClass IN (IRI(CONCAT(STR(tun:), ?m1)),
+                                     IRI(CONCAT(STR(tun:), ?m2)),
+                                     IRI(CONCAT(STR(tun:), ?m3))))
+            }
+            BIND(1 + IF(?m2 != ?m1, 1, 0) + IF(?m3 != ?m2, 1, 0) AS ?setSize)
+            BIND(IF(?m1 = ?m3, ?m1, IF(?m1 = ?m2, CONCAT(?m1, " + ", ?m3),
+                 IF(?m2 = ?m3, CONCAT(?m1, " + ", ?m2),
+                 CONCAT(?m1, " + ", ?m2, " + ", ?m3)))) AS ?modalitySet)
+        }
+        GROUP BY ?setSize ?modalitySet
+    }
+    FILTER(?levelsCovered >= 3)
+}
+ORDER BY ?setSize ?modalitySet

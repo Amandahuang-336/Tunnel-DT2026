@@ -1,0 +1,24 @@
+# CQ-24  What sensor data was used to identify this defect?
+# Scenario 4: Compliance audit and traceability
+# Category: Multimodal
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-1247-L
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?technique ?status ?finding ?confidence ?provisionalClass
+WHERE {
+    tun:{DEFECT_ID} tun:hasObservation ?o .
+    ?o tun:isDetectedWith/rdfs:label ?technique .
+    OPTIONAL { ?o tun:status ?status . }
+    OPTIONAL { ?o rdfs:comment ?finding . }
+    OPTIONAL { ?o tun:confidence ?confidence . }
+    OPTIONAL { ?o tun:provisionalClass ?provisionalClass . }
+}
+ORDER BY ?technique

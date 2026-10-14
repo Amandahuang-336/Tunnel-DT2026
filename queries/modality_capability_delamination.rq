@@ -1,0 +1,26 @@
+PREFIX tun: <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# Scenario 5, CQ-29 and CQ-30: positive and negative modality capability
+# for the Delaminations class. The owl:Class guards keep ABox evidence
+# assertions out of this TBox capability query.
+
+SELECT DISTINCT ?capability ?modality
+WHERE {
+    VALUES ?defectClass { tun:Delaminations }
+    {
+        ?defectClass tun:isDetectedWith ?modality .
+        ?modality rdf:type owl:Class .
+        BIND("can detect" AS ?capability)
+        BIND(0 AS ?sortOrder)
+    }
+    UNION
+    {
+        ?modality tun:cannotDetect ?defectClass .
+        ?modality rdf:type owl:Class .
+        BIND("cannot detect" AS ?capability)
+        BIND(1 AS ?sortOrder)
+    }
+}
+ORDER BY ?sortOrder ?modality

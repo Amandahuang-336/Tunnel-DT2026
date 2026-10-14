@@ -1,0 +1,21 @@
+PREFIX tun: <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std: <http://w3id.org/tunnel-dt/governance#>
+
+# CQ-25/CQ-26: replace {DEFECT_ID} before execution.
+# The direct defect-to-clause object-property assertion is joined to the
+# threshold and selected intervention that use the same clause IRI.
+
+SELECT DISTINCT ?defect ?threshold ?intervention ?clause
+                ?clauseRef ?edition ?editionName ?textHash
+WHERE {
+    BIND(tun:{DEFECT_ID} AS ?defect)
+    ?defect tun:sourceReference ?clause ;
+            tun:hasThreshold ?threshold .
+    ?threshold tun:derivedFrom ?clause ;
+               tun:prescribesIntervention ?intervention .
+    ?clause std:clauseRef ?clauseRef ;
+            std:inEdition ?edition ;
+            std:textHash ?textHash .
+    ?edition std:edition ?editionName .
+}
+ORDER BY ?threshold ?intervention

@@ -1,0 +1,19 @@
+# CQ-29  Which modalities can detect delamination?
+# Scenario 5: Modality limitation awareness
+# Category: Multimodal
+# Parameters: none
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?modality
+WHERE {
+    tun:Delaminations tun:isDetectedWith ?modality .
+    ?modality rdf:type owl:Class .
+}
+ORDER BY ?modality

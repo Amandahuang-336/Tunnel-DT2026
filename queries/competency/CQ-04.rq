@@ -1,0 +1,32 @@
+# CQ-04  What is the diagnostic completeness score?
+# Scenario 1: Crack with moisture detected during quarterly inspection
+# Category: Multimodal
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-1158-S
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+# recordedScore is the score held on the defect record; profileScore
+# recomputes it from the modalities that observed the defect and the
+# modality evidence profile (four evidence levels).
+SELECT ?recordedScore
+       (COUNT(DISTINCT ?profLevel) AS ?levelsCovered)
+       (COUNT(DISTINCT ?profLevel) / 4 AS ?profileScore)
+       (GROUP_CONCAT(DISTINCT ?profLevel; separator=", ") AS ?coveredLevels)
+WHERE {
+    OPTIONAL { tun:{DEFECT_ID} tun:completenessScore ?recordedScore . }
+    tun:{DEFECT_ID} tun:hasIndicator/tun:isDetectedWith/rdfs:label ?profMod .
+    VALUES (?profMod ?profLevel) {
+        ("RGB"     "defect")
+        ("RGBD"    "defect")    ("RGBD"    "indicator")
+        ("Thermal" "cause")     ("Thermal" "indicator")
+        ("GPR"     "structure") ("GPR"     "indicator")
+    }
+}
+GROUP BY ?recordedScore

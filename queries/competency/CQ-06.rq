@@ -1,0 +1,26 @@
+# CQ-06  What condition state does this defect correspond to?
+# Scenario 1: Crack with moisture detected during quarterly inspection
+# Category: Defect
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-1247-L
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?severity ?priority ?threshold ?criterion ?tier ?status
+WHERE {
+    OPTIONAL { tun:{DEFECT_ID} tun:hasSeverity ?severity . }
+    OPTIONAL { tun:{DEFECT_ID} tun:hasPriority ?priority . }
+    OPTIONAL {
+        tun:{DEFECT_ID} tun:hasThreshold ?threshold .
+        OPTIONAL { ?threshold rdfs:label ?criterion . }
+        OPTIONAL { ?threshold tun:tier ?tier . }
+        OPTIONAL { ?threshold tun:status ?status . }
+    }
+}
+ORDER BY ?threshold

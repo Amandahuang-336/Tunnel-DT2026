@@ -1,0 +1,27 @@
+# CQ-07  What intervention is prescribed for this condition state?
+# Scenario 1: Crack with moisture detected during quarterly inspection
+# Category: Maintenance
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-1247-L
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?tier ?intervention ?stepOrder ?step ?rationale ?source
+WHERE {
+    tun:{DEFECT_ID} tun:hasThreshold ?threshold .
+    ?threshold tun:status "Activated" ;
+               tun:prescribesIntervention ?intervention .
+    OPTIONAL { ?threshold tun:tier ?tier . }
+    ?intervention tun:hasStep ?s .
+    ?s tun:stepOrder ?stepOrder ;
+       rdfs:comment ?step .
+    OPTIONAL { ?s tun:rationale ?rationale . }
+    OPTIONAL { ?s dct:source ?source . }
+}
+ORDER BY ?stepOrder

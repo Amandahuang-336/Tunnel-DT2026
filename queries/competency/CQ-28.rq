@@ -1,0 +1,48 @@
+# CQ-28  Were there FMEA chain levels with no evidence? If so, was a targeted survey recommended?
+# Scenario 4: Compliance audit and traceability
+# Category: Multimodal
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-0923-C
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+# Evidence levels no deployed modality reaches, with the modalities that
+# would reach them. "none" means no modality in the profile can observe
+# that level for this defect type.
+SELECT ?missingLevel (GROUP_CONCAT(DISTINCT ?candidate; separator=", ") AS ?recommendedSurvey)
+WHERE {
+    VALUES ?missingLevel { "defect" "indicator" "cause" "structure" }
+    tun:{DEFECT_ID} tun:hasType ?type .
+    FILTER NOT EXISTS {
+        VALUES (?m2 ?l2) {
+            ("RGB" "defect") ("RGBD" "defect") ("RGBD" "indicator")
+            ("Thermal" "cause") ("Thermal" "indicator")
+            ("GPR" "structure") ("GPR" "indicator")
+        }
+        tun:{DEFECT_ID} tun:hasIndicator/tun:isDetectedWith/rdfs:label ?m2 .
+        FILTER(?l2 = ?missingLevel)
+    }
+    OPTIONAL {
+    VALUES (?profMod ?profLevel) {
+        ("RGB"     "defect")
+        ("RGBD"    "defect")    ("RGBD"    "indicator")
+        ("Thermal" "cause")     ("Thermal" "indicator")
+        ("GPR"     "structure") ("GPR"     "indicator")
+    }
+        FILTER(?profLevel = ?missingLevel)
+        FILTER NOT EXISTS {
+            ?modClass tun:cannotDetect ?defectClass .
+            FILTER(?modClass = IRI(CONCAT(STR(tun:), ?profMod)))
+            FILTER(?defectClass = IRI(CONCAT(STR(tun:), ?type)))
+        }
+    }
+    BIND(COALESCE(?profMod, "none") AS ?candidate)
+}
+GROUP BY ?missingLevel
+ORDER BY ?missingLevel

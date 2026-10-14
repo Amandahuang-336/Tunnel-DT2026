@@ -1,0 +1,566 @@
+{
+  "_meta": {
+    "demonstration_data": true,
+    "disclaimer": "Synthetic geological context for research demonstration. Both tunnels are fictitious; stratigraphy is generic (estuarine soft sediments over basalt over Palaeozoic mudstone) and does not describe any real site.",
+    "schema_version": "1.0",
+    "generated": "Rev 9"
+  },
+  "tunnels": {
+    "TUN-A": {
+      "tunnel_id": "TUN-A",
+      "label": "Tunnel A",
+      "geological_setting": "Estuarine corridor crossing delta sediments above Palaeozoic basement",
+      "groundwater_setting": "Generally below water table along bored sections; saline intrusion from estuarine system",
+      "data_provenance": "Synthetic. Generic stratigraphy for demonstration only.",
+      "zones_along_chainage": [
+        {
+          "zone_id": "TUN-A-G01",
+          "chainage_range_m": [
+            0,
+            96
+          ],
+          "name": "Western portal — recent fill and Estuarine soft clay",
+          "primary_unit": "Engineered fill over Estuarine soft clay",
+          "tunnel_substrate": "Estuarine soft clay — soft to firm grey silty clay, marine origin",
+          "groundwater_depth_to_water_table_m": 2.5,
+          "tunnel_depth_below_ground_m": 8,
+          "tunnel_depth_below_water_table_m": 5.5,
+          "engineering_notes": "Above water table at portal level after dewatering. Diaphragm wall support standard.",
+          "hazards": [
+            "Soft cohesive ground",
+            "Settlement risk",
+            "Saline groundwater"
+          ]
+        },
+        {
+          "zone_id": "TUN-A-G02",
+          "chainage_range_m": [
+            96,
+            560
+          ],
+          "name": "Western bored — Estuarine delta sediments and weathered basalt",
+          "primary_unit": "Estuarine soft clay grading into Estuarine sand; Quaternary basalt at depth",
+          "tunnel_substrate": "Mixed-face: Estuarine sand (loose to medium dense) overlying weathered basalt",
+          "groundwater_depth_to_water_table_m": 2.0,
+          "tunnel_depth_below_ground_m": 18,
+          "tunnel_depth_below_water_table_m": 16,
+          "engineering_notes": "TBM operated through mixed-face conditions (sand/clay/weathered basalt). Annular grouting at 2.5–3.5 bar.",
+          "hazards": [
+            "Mixed-face conditions",
+            "Permeable sand layers",
+            "Weathered basalt blocks"
+          ]
+        },
+        {
+          "zone_id": "TUN-A-G03",
+          "chainage_range_m": [
+            560,
+            1520
+          ],
+          "name": "Central deep — Palaeozoic mudstone formation",
+          "primary_unit": "Palaeozoic mudstone formation (interbedded siltstone and sandstone)",
+          "tunnel_substrate": "Slightly weathered to fresh Palaeozoic mudstone/siltstone; locally fractured",
+          "groundwater_depth_to_water_table_m": 1.5,
+          "tunnel_depth_below_ground_m": 28,
+          "tunnel_depth_below_water_table_m": 26.5,
+          "engineering_notes": "Below water table along full length. Saline groundwater (estuarine zone). Higher cover and corrosion protection specified due to saline exposure. Annular grout at 3–4 bar.",
+          "hazards": [
+            "High hydrostatic pressure",
+            "Saline groundwater",
+            "Fractured zones in mudstone"
+          ]
+        },
+        {
+          "zone_id": "TUN-A-G04",
+          "chainage_range_m": [
+            1520,
+            2480
+          ],
+          "name": "Eastern bored — Estuarine delta sediments returning",
+          "primary_unit": "Estuarine delta sediments — Estuarine soft clay and clays over weathered basalt",
+          "tunnel_substrate": "Mostly Estuarine soft clay; transitions to mixed face toward eastern portal",
+          "groundwater_depth_to_water_table_m": 2.5,
+          "tunnel_depth_below_ground_m": 16,
+          "tunnel_depth_below_water_table_m": 13.5,
+          "engineering_notes": "TBM advance through silts and clays; ground conditions improve toward portal.",
+          "hazards": [
+            "Soft cohesive ground",
+            "Compressible silts"
+          ]
+        },
+        {
+          "zone_id": "TUN-A-G05",
+          "chainage_range_m": [
+            2480,
+            2800
+          ],
+          "name": "Eastern portal — recent fill and silts",
+          "primary_unit": "Engineered fill over recent alluvium / Estuarine soft clay",
+          "tunnel_substrate": "Engineered fill / Estuarine soft clay",
+          "groundwater_depth_to_water_table_m": 3.0,
+          "tunnel_depth_below_ground_m": 7,
+          "tunnel_depth_below_water_table_m": 4,
+          "engineering_notes": "Cut-and-cover. Above water table after dewatering during construction.",
+          "hazards": [
+            "Settlement risk",
+            "Saline groundwater"
+          ]
+        }
+      ],
+      "stratigraphy_at_chainage_samples": [
+        {
+          "sample_chainage_m": 50,
+          "ground_level_m_AHD": 5,
+          "tunnel_centreline_depth_m": 8,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 1.5,
+              "unit": "Engineered fill",
+              "type": "fill",
+              "colour": "#cdb79e"
+            },
+            {
+              "top_depth_m": 1.5,
+              "bottom_depth_m": 14,
+              "unit": "Estuarine soft clay",
+              "type": "soft_clay",
+              "colour": "#a8b5a0"
+            },
+            {
+              "top_depth_m": 14,
+              "bottom_depth_m": 30,
+              "unit": "Estuarine sand",
+              "type": "sand",
+              "colour": "#e8d49b"
+            }
+          ],
+          "water_table_depth_m": 2.5
+        },
+        {
+          "sample_chainage_m": 350,
+          "ground_level_m_AHD": 8,
+          "tunnel_centreline_depth_m": 18,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 2,
+              "unit": "Engineered fill",
+              "type": "fill",
+              "colour": "#cdb79e"
+            },
+            {
+              "top_depth_m": 2,
+              "bottom_depth_m": 12,
+              "unit": "Estuarine soft clay",
+              "type": "soft_clay",
+              "colour": "#a8b5a0"
+            },
+            {
+              "top_depth_m": 12,
+              "bottom_depth_m": 22,
+              "unit": "Estuarine sand",
+              "type": "sand",
+              "colour": "#e8d49b"
+            },
+            {
+              "top_depth_m": 22,
+              "bottom_depth_m": 35,
+              "unit": "Weathered Quaternary basalt",
+              "type": "weathered_basalt",
+              "colour": "#7d6e5c"
+            }
+          ],
+          "water_table_depth_m": 2.0
+        },
+        {
+          "sample_chainage_m": 950,
+          "ground_level_m_AHD": 12,
+          "tunnel_centreline_depth_m": 28,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 2,
+              "unit": "Engineered fill / topsoil",
+              "type": "fill",
+              "colour": "#cdb79e"
+            },
+            {
+              "top_depth_m": 2,
+              "bottom_depth_m": 8,
+              "unit": "Estuarine soft clay",
+              "type": "soft_clay",
+              "colour": "#a8b5a0"
+            },
+            {
+              "top_depth_m": 8,
+              "bottom_depth_m": 14,
+              "unit": "Palaeogene basalt (weathered)",
+              "type": "weathered_basalt",
+              "colour": "#7d6e5c"
+            },
+            {
+              "top_depth_m": 14,
+              "bottom_depth_m": 45,
+              "unit": "Palaeozoic mudstone formation (siltstone/sandstone)",
+              "type": "mudstone",
+              "colour": "#8a7256"
+            }
+          ],
+          "water_table_depth_m": 1.5
+        },
+        {
+          "sample_chainage_m": 2000,
+          "ground_level_m_AHD": 7,
+          "tunnel_centreline_depth_m": 16,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 2,
+              "unit": "Engineered fill",
+              "type": "fill",
+              "colour": "#cdb79e"
+            },
+            {
+              "top_depth_m": 2,
+              "bottom_depth_m": 11,
+              "unit": "Estuarine soft clay",
+              "type": "soft_clay",
+              "colour": "#a8b5a0"
+            },
+            {
+              "top_depth_m": 11,
+              "bottom_depth_m": 20,
+              "unit": "Estuarine sand",
+              "type": "sand",
+              "colour": "#e8d49b"
+            },
+            {
+              "top_depth_m": 20,
+              "bottom_depth_m": 32,
+              "unit": "Weathered Quaternary basalt",
+              "type": "weathered_basalt",
+              "colour": "#7d6e5c"
+            }
+          ],
+          "water_table_depth_m": 2.5
+        },
+        {
+          "sample_chainage_m": 2700,
+          "ground_level_m_AHD": 4,
+          "tunnel_centreline_depth_m": 7,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 1.5,
+              "unit": "Engineered fill",
+              "type": "fill",
+              "colour": "#cdb79e"
+            },
+            {
+              "top_depth_m": 1.5,
+              "bottom_depth_m": 12,
+              "unit": "Estuarine soft clay / recent alluvium",
+              "type": "soft_clay",
+              "colour": "#a8b5a0"
+            }
+          ],
+          "water_table_depth_m": 3.0
+        }
+      ]
+    },
+    "TUN-B": {
+      "tunnel_id": "TUN-B",
+      "label": "Tunnel B",
+      "geological_setting": "Corridor crossing estuarine delta sediments and entering deep Palaeozoic mudstone under a river; intersects a buried palaeochannel near the eastern portal",
+      "groundwater_setting": "Below water table for ~95% of length; under the river the deep mudstone section faces hydrostatic head exceeding 5 bar at maximum depth",
+      "data_provenance": "Synthetic. Generic stratigraphy for demonstration only.",
+      "zones_along_chainage": [
+        {
+          "zone_id": "TUN-B-G01",
+          "chainage_range_m": [
+            0,
+            448
+          ],
+          "name": "Western portal — Estuarine soft clay / Estuarine sand sequence",
+          "primary_unit": "Estuarine delta sediments — estuarine soft clay and sand",
+          "tunnel_substrate": "Estuarine sand at tunnel level; Estuarine soft clay as overburden",
+          "groundwater_depth_to_water_table_m": 2.0,
+          "tunnel_depth_below_ground_m": 14,
+          "tunnel_depth_below_water_table_m": 12,
+          "engineering_notes": "Top-down secant pile construction. Working through soft clay / sand sequence. Estuarine sand acts as a confined aquifer under the silt — dewatering required.",
+          "hazards": [
+            "Confined sand aquifer",
+            "Soft cohesive overburden",
+            "Potential for settlement above tunnel"
+          ]
+        },
+        {
+          "zone_id": "TUN-B-G02",
+          "chainage_range_m": [
+            448,
+            1120
+          ],
+          "name": "River crossing approach — Buried-channel gravels and weathered basalt",
+          "primary_unit": "Buried-channel gravels (sand/gravel aquifer ~20m thick) above Quaternary basalt and Palaeogene basalt",
+          "tunnel_substrate": "Weathered basalt grading into fresh basalt; Buried-channel gravels above",
+          "groundwater_depth_to_water_table_m": 1.5,
+          "tunnel_depth_below_ground_m": 35,
+          "tunnel_depth_below_water_table_m": 33.5,
+          "engineering_notes": "Roadheader excavation through weathered basalt overlying mudstone. The buried-channel gravels form an aquifer that required dewatering during construction.",
+          "hazards": [
+            "Permeable Buried-channel gravels aquifer above",
+            "Highly variable basalt strength",
+            "Approach to river crossing — gasket sealing critical"
+          ]
+        },
+        {
+          "zone_id": "TUN-B-G03",
+          "chainage_range_m": [
+            1120,
+            2080
+          ],
+          "name": "River crossing — deep Palaeozoic mudstone formation",
+          "primary_unit": "Palaeozoic mudstone formation (siltstone, mudstone, fine sandstone)",
+          "tunnel_substrate": "Slightly weathered to fresh Palaeozoic mudstone; locally fractured zones",
+          "groundwater_depth_to_water_table_m": 0,
+          "tunnel_depth_below_ground_m": 55,
+          "tunnel_depth_below_water_table_m": 55,
+          "engineering_notes": "Maximum depth ~55 m. Below the river. Driven through Palaeozoic mudstone. Encountered high water pressures during construction requiring grouting interventions. Hydrostatic head approaches 5.5 bar at maximum depth. Mudstone is porous — water from Buried-channel gravels aquifer above can leak into deeper formations.",
+          "hazards": [
+            "Maximum hydrostatic pressure (~5.5 bar)",
+            "Porous mudstone allowing water transmission from upper aquifer",
+            "Fractured zones increase local permeability",
+            "Saline groundwater near river"
+          ]
+        },
+        {
+          "zone_id": "TUN-B-G04",
+          "chainage_range_m": [
+            2080,
+            2960
+          ],
+          "name": "Eastern bored — Palaeozoic mudstone formation with basalt intrusions",
+          "primary_unit": "Palaeozoic mudstone formation with intermittent Palaeogene basalt intrusions",
+          "tunnel_substrate": "Palaeozoic mudstone with locally interbedded weathered basalt dykes",
+          "groundwater_depth_to_water_table_m": 4.0,
+          "tunnel_depth_below_ground_m": 25,
+          "tunnel_depth_below_water_table_m": 21,
+          "engineering_notes": "Mudstone with intermittent basalt intrusions (dykes weathered to clay locally). Standard ground conditions return. Crosses an inferred buried palaeochannel.",
+          "hazards": [
+            "Variable mudstone/basalt interface",
+            "Dyke-related discontinuities",
+            "Buried palaeochannel — variable infill"
+          ]
+        },
+        {
+          "zone_id": "TUN-B-G05",
+          "chainage_range_m": [
+            2960,
+            3400
+          ],
+          "name": "Eastern portal — Quaternary basalt over mudstone",
+          "primary_unit": "Quaternary basalt overlying Palaeozoic mudstone formation",
+          "tunnel_substrate": "Palaeozoic mudstone; Quaternary basalt as cap",
+          "groundwater_depth_to_water_table_m": 5.0,
+          "tunnel_depth_below_ground_m": 12,
+          "tunnel_depth_below_water_table_m": 7,
+          "engineering_notes": "Top-down cut-and-cover. Quaternary basalt caps the formation. Above water table for most of the cut-and-cover section after dewatering.",
+          "hazards": [
+            "Variable basalt thickness",
+            "Weathering at basalt-mudstone interface"
+          ]
+        }
+      ],
+      "stratigraphy_at_chainage_samples": [
+        {
+          "sample_chainage_m": 200,
+          "ground_level_m_AHD": 4,
+          "tunnel_centreline_depth_m": 14,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 2,
+              "unit": "Engineered fill / topsoil",
+              "type": "fill",
+              "colour": "#cdb79e"
+            },
+            {
+              "top_depth_m": 2,
+              "bottom_depth_m": 8,
+              "unit": "Estuarine soft clay",
+              "type": "soft_clay",
+              "colour": "#a8b5a0"
+            },
+            {
+              "top_depth_m": 8,
+              "bottom_depth_m": 22,
+              "unit": "Estuarine sand",
+              "type": "sand",
+              "colour": "#e8d49b"
+            },
+            {
+              "top_depth_m": 22,
+              "bottom_depth_m": 35,
+              "unit": "Palaeogene sediments",
+              "type": "older_sediments",
+              "colour": "#b09478"
+            }
+          ],
+          "water_table_depth_m": 2.0
+        },
+        {
+          "sample_chainage_m": 700,
+          "ground_level_m_AHD": 6,
+          "tunnel_centreline_depth_m": 35,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 2,
+              "unit": "Engineered fill",
+              "type": "fill",
+              "colour": "#cdb79e"
+            },
+            {
+              "top_depth_m": 2,
+              "bottom_depth_m": 22,
+              "unit": "Buried-channel gravels (aquifer)",
+              "type": "gravel_aquifer",
+              "colour": "#d4b896"
+            },
+            {
+              "top_depth_m": 22,
+              "bottom_depth_m": 30,
+              "unit": "Quaternary basalt (weathered)",
+              "type": "weathered_basalt",
+              "colour": "#7d6e5c"
+            },
+            {
+              "top_depth_m": 30,
+              "bottom_depth_m": 50,
+              "unit": "Quaternary basalt (fresh)",
+              "type": "fresh_basalt",
+              "colour": "#3d3530"
+            },
+            {
+              "top_depth_m": 50,
+              "bottom_depth_m": 75,
+              "unit": "Palaeozoic mudstone formation",
+              "type": "mudstone",
+              "colour": "#8a7256"
+            }
+          ],
+          "water_table_depth_m": 1.5
+        },
+        {
+          "sample_chainage_m": 1600,
+          "ground_level_m_AHD": 0,
+          "tunnel_centreline_depth_m": 55,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 6,
+              "unit": "River water column",
+              "type": "water",
+              "colour": "#7eb6c9"
+            },
+            {
+              "top_depth_m": 6,
+              "bottom_depth_m": 15,
+              "unit": "Estuarine soft clay (river bed)",
+              "type": "soft_clay",
+              "colour": "#a8b5a0"
+            },
+            {
+              "top_depth_m": 15,
+              "bottom_depth_m": 30,
+              "unit": "Buried-channel gravels (aquifer)",
+              "type": "gravel_aquifer",
+              "colour": "#d4b896"
+            },
+            {
+              "top_depth_m": 30,
+              "bottom_depth_m": 45,
+              "unit": "Quaternary basalt",
+              "type": "fresh_basalt",
+              "colour": "#3d3530"
+            },
+            {
+              "top_depth_m": 45,
+              "bottom_depth_m": 80,
+              "unit": "Palaeozoic mudstone formation (deep)",
+              "type": "mudstone",
+              "colour": "#8a7256"
+            }
+          ],
+          "water_table_depth_m": 0
+        },
+        {
+          "sample_chainage_m": 2500,
+          "ground_level_m_AHD": 8,
+          "tunnel_centreline_depth_m": 25,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 2,
+              "unit": "Engineered fill",
+              "type": "fill",
+              "colour": "#cdb79e"
+            },
+            {
+              "top_depth_m": 2,
+              "bottom_depth_m": 10,
+              "unit": "Quaternary alluvium",
+              "type": "alluvium",
+              "colour": "#c4a884"
+            },
+            {
+              "top_depth_m": 10,
+              "bottom_depth_m": 18,
+              "unit": "Palaeogene basalt (weathered)",
+              "type": "weathered_basalt",
+              "colour": "#7d6e5c"
+            },
+            {
+              "top_depth_m": 18,
+              "bottom_depth_m": 45,
+              "unit": "Palaeozoic mudstone formation",
+              "type": "mudstone",
+              "colour": "#8a7256"
+            }
+          ],
+          "water_table_depth_m": 4.0
+        },
+        {
+          "sample_chainage_m": 3200,
+          "ground_level_m_AHD": 10,
+          "tunnel_centreline_depth_m": 12,
+          "layers": [
+            {
+              "top_depth_m": 0,
+              "bottom_depth_m": 1.5,
+              "unit": "Engineered fill",
+              "type": "fill",
+              "colour": "#cdb79e"
+            },
+            {
+              "top_depth_m": 1.5,
+              "bottom_depth_m": 8,
+              "unit": "Quaternary basalt",
+              "type": "fresh_basalt",
+              "colour": "#3d3530"
+            },
+            {
+              "top_depth_m": 8,
+              "bottom_depth_m": 35,
+              "unit": "Palaeozoic mudstone formation",
+              "type": "mudstone",
+              "colour": "#8a7256"
+            }
+          ],
+          "water_table_depth_m": 5.0
+        }
+      ]
+    }
+  }
+}

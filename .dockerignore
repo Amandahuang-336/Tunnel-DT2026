@@ -1,0 +1,27 @@
+# Keep the build context small and clean.
+
+.git
+.gitignore
+.gitattributes
+.github/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+.DS_Store
+.pytest_cache/
+
+# Optional local standards library — mount read-only instead of baking in.
+library/
+
+# Runtime-written state (don't bake a user's local tunnels into the image).
+data/custom_tunnels.json
+
+# Generated artifacts / scratch.
+*.pdf
+*.aux
+*.log

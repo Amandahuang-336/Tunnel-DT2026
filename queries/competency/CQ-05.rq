@@ -1,0 +1,47 @@
+# CQ-05  Which additional modalities should be deployed to fill evidence gaps?
+# Scenario 1: Crack with moisture detected during quarterly inspection
+# Category: Multimodal
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-0923-C
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+# A modality is recommended when it reaches an evidence level that no
+# modality used so far reaches, and the TBox does not record that it
+# cannot detect this defect class.
+SELECT ?recommended (GROUP_CONCAT(DISTINCT ?profLevel; separator=", ") AS ?fillsLevels)
+WHERE {
+    VALUES (?profMod ?profLevel) {
+        ("RGB"     "defect")
+        ("RGBD"    "defect")    ("RGBD"    "indicator")
+        ("Thermal" "cause")     ("Thermal" "indicator")
+        ("GPR"     "structure") ("GPR"     "indicator")
+    }
+    BIND(?profMod AS ?recommended)
+    tun:{DEFECT_ID} tun:hasType ?type .
+    FILTER NOT EXISTS {
+        tun:{DEFECT_ID} tun:hasIndicator/tun:isDetectedWith/rdfs:label ?recommended .
+    }
+    FILTER NOT EXISTS {
+        VALUES (?m2 ?l2) {
+            ("RGB" "defect") ("RGBD" "defect") ("RGBD" "indicator")
+            ("Thermal" "cause") ("Thermal" "indicator")
+            ("GPR" "structure") ("GPR" "indicator")
+        }
+        tun:{DEFECT_ID} tun:hasIndicator/tun:isDetectedWith/rdfs:label ?m2 .
+        FILTER(?l2 = ?profLevel)
+    }
+    FILTER NOT EXISTS {
+        ?modClass tun:cannotDetect ?defectClass .
+        FILTER(?modClass = IRI(CONCAT(STR(tun:), ?recommended)))
+        FILTER(?defectClass = IRI(CONCAT(STR(tun:), ?type)))
+    }
+}
+GROUP BY ?recommended
+ORDER BY ?recommended

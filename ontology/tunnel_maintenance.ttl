@@ -1,0 +1,460 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix tun: <http://w3id.org/tunnel-dt/ontology/v1.2#> .
+
+<http://w3id.org/tunnel-dt/ontology/v1.2> a owl:Ontology ;
+    dcterms:title "Road Tunnel Maintenance Ontology" ;
+    dcterms:description "Serviceability-oriented multimodal maintenance ontology for Australian road tunnels." ;
+    owl:versionInfo "1.2.0" .
+
+#################################################################
+#   Layer 1 — Asset taxonomy
+#################################################################
+
+tun:Structure a owl:Class ;
+    rdfs:comment "Physical tunnel component at the granularity of FMEA reasoning (manuscript L1)." .
+
+### Legacy implementation name retained as an equivalent alias. New ABox
+### assertions use the manuscript term tun:Structure.
+tun:TunnelComponent a owl:Class ;
+    owl:equivalentClass tun:Structure ;
+    owl:deprecated true ;
+    rdfs:comment "Legacy alias for Structure." .
+
+tun:StructuralComponent a owl:Class ;
+    rdfs:subClassOf tun:TunnelComponent .
+
+tun:SegmentRing a owl:Class ;
+    rdfs:subClassOf tun:StructuralComponent ;
+    rdfs:comment "Precast concrete ring forming tunnel lining." .
+
+tun:Joint a owl:Class ;
+    rdfs:subClassOf tun:StructuralComponent .
+
+tun:LongitudinalJoint a owl:Class ;
+    rdfs:subClassOf tun:Joint .
+
+tun:CircumferentialJoint a owl:Class ;
+    rdfs:subClassOf tun:Joint .
+
+tun:ServiceComponent a owl:Class ;
+    rdfs:subClassOf tun:TunnelComponent .
+
+tun:DrainageSystem a owl:Class ;
+    rdfs:subClassOf tun:ServiceComponent .
+
+#################################################################
+#   Layer 2 — Defect and deterioration model
+#################################################################
+
+tun:DefectCondition a owl:Class ;
+    rdfs:comment "Any observable defect or deterioration condition." .
+
+tun:SurfaceDefect a owl:Class ;
+    rdfs:subClassOf tun:DefectCondition .
+
+tun:Cracks a owl:Class ;
+    rdfs:subClassOf tun:SurfaceDefect .
+
+tun:Spalls a owl:Class ;
+    rdfs:subClassOf tun:SurfaceDefect .
+
+tun:LeakingJoints a owl:Class ;
+    rdfs:subClassOf tun:SurfaceDefect .
+
+tun:Staining a owl:Class ;
+    rdfs:subClassOf tun:SurfaceDefect .
+
+tun:SubsurfaceDefect a owl:Class ;
+    rdfs:subClassOf tun:DefectCondition .
+
+tun:Delaminations a owl:Class ;
+    rdfs:subClassOf tun:SubsurfaceDefect .
+
+tun:VoidBehindLining a owl:Class ;
+    rdfs:subClassOf tun:SubsurfaceDefect .
+
+### Remaining defect classes of the authored Protege TBox, carried here
+### so the two agree. The authored ontology lists all defect classes flat
+### under DefectCondition; the SurfaceDefect / SubsurfaceDefect grouping
+### above is an app-side refinement, so these are left flat rather than
+### assigned to a group the authored ontology does not assert.
+###
+### Note the converse gap: Staining and VoidBehindLining above are used by
+### the demo data and by the GPR narrative in the paper, but do not appear
+### under DefectCondition in the authored ontology.
+
+tun:BoltFailures a owl:Class ; rdfs:subClassOf tun:DefectCondition .
+tun:BrokenRoads a owl:Class ; rdfs:subClassOf tun:DefectCondition .
+tun:CorrodedReinforcement a owl:Class ; rdfs:subClassOf tun:DefectCondition .
+tun:DamagedGaskets a owl:Class ; rdfs:subClassOf tun:DefectCondition .
+tun:DeformedFlanges a owl:Class ; rdfs:subClassOf tun:DefectCondition .
+tun:FailedAnchors a owl:Class ; rdfs:subClassOf tun:DefectCondition .
+tun:HangerLossOfTension a owl:Class ; rdfs:subClassOf tun:DefectCondition ;
+    rdfs:comment "Hanger is not in tension because of a connection or other defect. AASHTO S16.10. Indicated by the NO_RING acoustic response to hammer sounding." .
+tun:LooseRock a owl:Class ; rdfs:subClassOf tun:DefectCondition .
+tun:RockReinforcementFailure a owl:Class ; rdfs:subClassOf tun:DefectCondition .
+tun:RustedThroughLinerPlates a owl:Class ; rdfs:subClassOf tun:DefectCondition .
+
+tun:FailureMechanism a owl:Class .
+tun:Corrosion a owl:Class ; rdfs:subClassOf tun:FailureMechanism .
+tun:Leakage_Water a owl:Class ; rdfs:subClassOf tun:FailureMechanism .
+tun:StructuralMovement a owl:Class ; rdfs:subClassOf tun:FailureMechanism .
+tun:EnvironmentalWeathering a owl:Class ; rdfs:subClassOf tun:FailureMechanism .
+
+tun:MeasuredIndicator a owl:Class ;
+    rdfs:comment "Quantitative or categorical observation supporting a defect (manuscript L4)." .
+tun:MeasuredIndicators a owl:Class ;
+    owl:equivalentClass tun:MeasuredIndicator ;
+    owl:deprecated true ;
+    rdfs:comment "Legacy plural alias for MeasuredIndicator." .
+tun:SpallDepth a owl:Class ; rdfs:subClassOf tun:MeasuredIndicator .
+tun:MoistureState a owl:Class ; rdfs:subClassOf tun:MeasuredIndicator .
+tun:DelaminationArea a owl:Class ; rdfs:subClassOf tun:MeasuredIndicator .
+tun:RebarCover a owl:Class ; rdfs:subClassOf tun:MeasuredIndicator .
+
+tun:PotentialCause a owl:Class .
+tun:ConditionState a owl:Class .
+
+#################################################################
+#   Layer 3 — Maintenance and decision model
+#################################################################
+
+### L6: the decision threshold that fires, and its tier.
+tun:Threshold a owl:Class ;
+    rdfs:comment "Decision threshold; the criterion that selects an intervention tier." .
+tun:Acceptable a owl:Class ; rdfs:subClassOf tun:Threshold .
+tun:Monitor_Closely a owl:Class ; rdfs:subClassOf tun:Threshold .
+tun:Investigation_Required a owl:Class ; rdfs:subClassOf tun:Threshold .
+tun:Action_Required a owl:Class ; rdfs:subClassOf tun:Threshold .
+tun:Emergency a owl:Class ; rdfs:subClassOf tun:Threshold .
+
+tun:Intervention a owl:Class .
+tun:InterventionStep a owl:Class ;
+    rdfs:comment "One ordered step in a case-specific Intervention." .
+tun:EpoxyCrackInjection a owl:Class ; rdfs:subClassOf tun:Intervention .
+tun:PolyurethaneGrouting a owl:Class ; rdfs:subClassOf tun:Intervention .
+tun:FormationGrouting a owl:Class ; rdfs:subClassOf tun:Intervention .
+tun:ShotcreteRepair a owl:Class ; rdfs:subClassOf tun:Intervention .
+
+tun:StandardClause a owl:Class .
+
+#################################################################
+#   Sensing modalities
+#################################################################
+
+### Class names follow the authored Protege ontology: the branch is
+### MeasurementTechnique, with Visual, Infrared, Electromagnetic,
+### Ultrasound and AcousticEmission beneath it.
+###
+### The four modalities the paper works in sit one level below those,
+### because the ablation analysis distinguishes RGB from RGBD and the
+### authored taxonomy does not. RGBD is a subclass of Visual: it derives
+### depth from dual RGB cameras, so it is a visual technique that also
+### resolves range. Ultrasound and AcousticEmission are carried from the
+### authored TBox for fidelity; no demo data populates them.
+
+### One acquisition, by one technique, at one place — the modality output
+### before the identity rule of the manuscript's Section 3.4 has bound it to
+### a defect. Specified there; no instances are populated in this build.
+tun:DefectObservation a owl:Class ;
+    rdfs:comment "A single modality observation, prior to binding." .
+
+tun:MeasurementTechnique a owl:Class ;
+    rdfs:comment "Modality or procedure that produced an indicator." .
+tun:MeasurementTechniques a owl:Class ;
+    owl:equivalentClass tun:MeasurementTechnique ;
+    owl:deprecated true ;
+    rdfs:comment "Legacy plural alias for MeasurementTechnique." .
+
+tun:Visual a owl:Class ; rdfs:subClassOf tun:MeasurementTechnique .
+tun:Infrared a owl:Class ; rdfs:subClassOf tun:MeasurementTechnique .
+tun:Electromagnetic a owl:Class ; rdfs:subClassOf tun:MeasurementTechnique .
+tun:Ultrasound a owl:Class ; rdfs:subClassOf tun:MeasurementTechnique .
+tun:AcousticEmission a owl:Class ; rdfs:subClassOf tun:MeasurementTechnique .
+
+tun:RGB a owl:Class ; rdfs:subClassOf tun:Visual .
+tun:RGBD a owl:Class ; rdfs:subClassOf tun:Visual .
+tun:Thermal a owl:Class ; rdfs:subClassOf tun:Infrared .
+tun:GPR a owl:Class ; rdfs:subClassOf tun:Electromagnetic .
+
+tun:FMEAChainLevel a owl:Class .
+tun:DefectConditionLevel a owl:Class ; rdfs:subClassOf tun:FMEAChainLevel .
+tun:MeasuredIndicatorLevel a owl:Class ; rdfs:subClassOf tun:FMEAChainLevel .
+tun:MeasuredIndicatorsLevel a owl:Class ;
+    owl:equivalentClass tun:MeasuredIndicatorLevel ;
+    owl:deprecated true .
+tun:PotentialCauseLevel a owl:Class ; rdfs:subClassOf tun:FMEAChainLevel .
+tun:StructureLevel a owl:Class ; rdfs:subClassOf tun:FMEAChainLevel .
+
+#################################################################
+#   Object properties (relations)
+#################################################################
+
+tun:hasDefect a owl:ObjectProperty ;
+    rdfs:domain tun:TunnelComponent ;
+    rdfs:range tun:DefectCondition ;
+    rdfs:comment "Links a component to defects affecting it." .
+
+tun:hasMechanism a owl:ObjectProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range tun:FailureMechanism .
+
+tun:hasIndicator a owl:ObjectProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range tun:MeasuredIndicator .
+
+tun:hasCause a owl:ObjectProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range tun:PotentialCause ;
+    rdfs:comment "L3 to L5." .
+
+### L6 and L7. The authored ontology routes the prescription through the
+### threshold that fires: DefectCondition -> Threshold -> Intervention.
+tun:hasThreshold a owl:ObjectProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range tun:Threshold ;
+    rdfs:comment "L3 to L6." .
+
+tun:prescribesIntervention a owl:ObjectProperty ;
+    rdfs:domain tun:Threshold ;
+    rdfs:range tun:Intervention ;
+    rdfs:comment "L6 to L7." .
+
+tun:onIndicator a owl:ObjectProperty ;
+    rdfs:domain tun:Threshold ;
+    rdfs:range tun:MeasuredIndicator .
+
+tun:derivedFrom a owl:ObjectProperty ;
+    rdfs:domain tun:Threshold ;
+    rdfs:range tun:StandardClause .
+
+### Legacy shortcut retained for compatibility. The manuscript-aligned ABox
+### routes every prescription through hasThreshold/prescribesIntervention.
+tun:hasIntervention a owl:ObjectProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range tun:Intervention ;
+    owl:deprecated true ;
+    rdfs:comment "Legacy shortcut; use hasThreshold/prescribesIntervention." .
+
+### Relates a thing that was observed to the technique that observed it:
+### m(o) for an observation, the acquiring technique for an indicator, and
+### for a defect the union of the techniques of its evidence. The indicator
+### case is the one the manuscript's competency-question query traverses.
+tun:isDetectedWith a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( tun:DefectCondition
+                                tun:DefectObservation
+                                tun:MeasuredIndicator ) ] ;
+    rdfs:range tun:MeasurementTechnique .
+
+### Manuscript component link. The case ABox uses locatedAt; atComponent is
+### retained below only for compatibility with earlier dashboard queries.
+tun:locatedAt a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( tun:DefectCondition tun:DefectObservation ) ] ;
+    rdfs:range tun:Structure .
+
+### kappa(o). TunnelComponent here corresponds to Structure in the
+### authored ontology; this file carries the finer component taxonomy.
+tun:atComponent a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( tun:DefectCondition tun:DefectObservation ) ] ;
+    rdfs:range tun:Structure ;
+    rdfs:subPropertyOf tun:locatedAt ;
+    owl:deprecated true ;
+    rdfs:comment "Legacy alias; use locatedAt." .
+
+tun:cannotDetect a owl:ObjectProperty ;
+    rdfs:domain tun:MeasurementTechnique ;
+    rdfs:range tun:DefectCondition ;
+    rdfs:comment "Explicit limitation marker for each modality." .
+
+tun:atFMEALevel a owl:ObjectProperty ;
+    rdfs:domain tun:MeasuredIndicator ;
+    rdfs:range tun:FMEAChainLevel .
+
+tun:sourceReference a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( tun:DefectCondition tun:Threshold
+                                tun:Intervention tun:InterventionStep ) ] ;
+    rdfs:range tun:StandardClause ;
+    rdfs:comment "Machine-followable IRI link to the governing standard clause. On a defect, identifies the clause used to grade the decision." .
+
+tun:hasStep a owl:ObjectProperty ;
+    rdfs:domain tun:Intervention ;
+    rdfs:range tun:InterventionStep .
+
+### Identity resolution (manuscript Section 3.4). Specified, not populated.
+tun:hasObservation a owl:ObjectProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range tun:DefectObservation ;
+    rdfs:comment "Links a defect to the observations bound to it by the identity rule." .
+
+tun:supersedes a owl:ObjectProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range tun:DefectCondition ;
+    rdfs:comment "Cross-cycle identity: a defect recorded in cycle t+1 supersedes its predecessor in cycle t." .
+
+#################################################################
+#   Data properties
+#################################################################
+
+tun:atRingID a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:integer .
+
+tun:atChainage a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:decimal .
+
+tun:hasType a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:string .
+
+tun:atPosition a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:string .
+
+tun:hasSeverity a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:string .
+
+tun:hasPriority a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:string .
+
+tun:estimatedCost a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:decimal .
+
+tun:completenessScore a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:decimal .
+
+tun:hasDescription a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:string .
+
+tun:discoveredOn a owl:DatatypeProperty ;
+    rdfs:comment "Date of the inspection at which the defect was first recorded." ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:date .
+
+tun:deadlineDays a owl:DatatypeProperty ;
+    rdfs:comment "Days from discovery within which the prescribed intervention must be completed." ;
+    rdfs:domain tun:DefectCondition ;
+    rdfs:range xsd:integer .
+
+tun:hasValue a owl:DatatypeProperty ;
+    rdfs:domain tun:MeasuredIndicator ;
+    rdfs:range rdfs:Literal .
+
+tun:indicatorValue a owl:DatatypeProperty ;
+    rdfs:subPropertyOf tun:hasValue ;
+    rdfs:domain tun:MeasuredIndicator ;
+    rdfs:range xsd:string ;
+    owl:deprecated true ;
+    rdfs:comment "Legacy alias; use hasValue." .
+
+tun:indicatorType a owl:DatatypeProperty ;
+    rdfs:domain tun:MeasuredIndicator ;
+    rdfs:range xsd:string .
+
+tun:unit a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( tun:MeasuredIndicator tun:Threshold ) ] ;
+    rdfs:range xsd:string .
+
+tun:confidence a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( tun:DefectObservation tun:MeasuredIndicator tun:PotentialCause ) ] ;
+    rdfs:range xsd:decimal .
+
+tun:status a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+tun:stepOrder a owl:DatatypeProperty ;
+    rdfs:domain tun:InterventionStep ;
+    rdfs:range xsd:integer .
+
+tun:rationale a owl:DatatypeProperty ;
+    rdfs:domain tun:InterventionStep ;
+    rdfs:range xsd:string .
+
+tun:operator a owl:DatatypeProperty ;
+    rdfs:domain tun:Threshold ;
+    rdfs:range xsd:string .
+
+tun:value a owl:DatatypeProperty ;
+    rdfs:domain tun:Threshold ;
+    rdfs:range rdfs:Literal .
+
+tun:tier a owl:ObjectProperty ;
+    rdfs:domain tun:Threshold ;
+    rdfs:range tun:Threshold .
+
+### The observation's spatial anchor and provisional class (Section 3.4).
+### provisionalClass is a string rather than a pointer to a defect class:
+### an unbound observation carries a label, not a committed classification,
+### and a class-valued property would require OWL punning.
+tun:observationX a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectObservation ;
+    rdfs:range xsd:decimal .
+
+tun:observationY a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectObservation ;
+    rdfs:range xsd:decimal .
+
+tun:provisionalClass a owl:DatatypeProperty ;
+    rdfs:domain tun:DefectObservation ;
+    rdfs:range xsd:string .
+
+#################################################################
+#   Modality capability axioms (multimodal mapping table)
+#################################################################
+
+### Positive capability assertions needed by Scenario 5 (CQ-29).
+### The subject is the defect class and the object is the modality class,
+### following the direction of isDetectedWith used by ABox defect records.
+tun:Delaminations tun:isDetectedWith tun:Thermal,
+                                      tun:GPR .
+
+### Explicit limitations used by Scenario 5 (CQ-30).
+tun:RGB tun:cannotDetect tun:Delaminations ;
+        tun:cannotDetect tun:VoidBehindLining .
+
+tun:RGBD tun:cannotDetect tun:Delaminations ;
+         tun:cannotDetect tun:VoidBehindLining .
+
+tun:Thermal tun:cannotDetect tun:Cracks .
+
+### Reasons for the limitations above, as OWL axiom annotations (CQ-30).
+[] a owl:Axiom ;
+   owl:annotatedSource tun:RGB ;
+   owl:annotatedProperty tun:cannotDetect ;
+   owl:annotatedTarget tun:Delaminations ;
+   rdfs:comment "Surface imaging only: a delamination is a subsurface plane with no visible expression until it spalls." .
+[] a owl:Axiom ;
+   owl:annotatedSource tun:RGB ;
+   owl:annotatedProperty tun:cannotDetect ;
+   owl:annotatedTarget tun:VoidBehindLining ;
+   rdfs:comment "Surface imaging only: a void behind the lining is not visible from the intrados." .
+[] a owl:Axiom ;
+   owl:annotatedSource tun:RGBD ;
+   owl:annotatedProperty tun:cannotDetect ;
+   owl:annotatedTarget tun:Delaminations ;
+   rdfs:comment "Captures surface geometry only: delamination produces no measurable surface deformation before spalling." .
+[] a owl:Axiom ;
+   owl:annotatedSource tun:RGBD ;
+   owl:annotatedProperty tun:cannotDetect ;
+   owl:annotatedTarget tun:VoidBehindLining ;
+   rdfs:comment "Captures surface geometry only: a void behind the lining has no surface signature." .
+[] a owl:Axiom ;
+   owl:annotatedSource tun:Thermal ;
+   owl:annotatedProperty tun:cannotDetect ;
+   owl:annotatedTarget tun:Cracks ;
+   rdfs:comment "A dry crack produces no thermal contrast, and crack widths are below the camera's spatial resolution." .

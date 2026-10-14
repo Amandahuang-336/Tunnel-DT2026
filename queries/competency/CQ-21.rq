@@ -1,0 +1,21 @@
+# CQ-21  What is the estimated cost of each prescribed intervention?
+# Scenario 3: Prioritisation across multiple defects in a tunnel section
+# Category: Maintenance
+# Parameters: none
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?defect ?intervention ?estimatedCost_AUD
+WHERE {
+    ?defect tun:hasThreshold ?t ;
+            tun:estimatedCost ?estimatedCost_AUD .
+    ?t tun:status "Activated" ;
+       tun:prescribesIntervention ?intervention .
+}
+ORDER BY DESC(?estimatedCost_AUD)

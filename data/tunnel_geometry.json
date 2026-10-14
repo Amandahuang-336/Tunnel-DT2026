@@ -1,0 +1,166 @@
+{
+  "tunnels": [
+    {
+      "tunnel_id": "TUN-A",
+      "label": "Tunnel A",
+      "anonymised": true,
+      "length_m": 2800,
+      "rings_total": 1750,
+      "ring_length_m": 1.6,
+      "max_depth_m": 30,
+      "comment": "Fictitious tunnel. Alignment is synthetic and placed near 0°N 0°E (the 'Null Island' GIS placeholder) so that it cannot be mistaken for a real site.",
+      "alignment": [
+        [
+          0.01,
+          0.0
+        ],
+        [
+          0.0103,
+          0.00229
+        ],
+        [
+          0.01062,
+          0.00457
+        ],
+        [
+          0.01099,
+          0.00684
+        ],
+        [
+          0.01142,
+          0.00909
+        ],
+        [
+          0.01193,
+          0.01132
+        ],
+        [
+          0.01252,
+          0.01353
+        ],
+        [
+          0.0132,
+          0.01571
+        ],
+        [
+          0.01395,
+          0.01788
+        ],
+        [
+          0.01476,
+          0.02003
+        ],
+        [
+          0.01562,
+          0.02217
+        ],
+        [
+          0.01651,
+          0.0243
+        ]
+      ],
+      "portals": {
+        "west": {
+          "coords": [
+            0.01,
+            0.0
+          ],
+          "label": "Western portal"
+        },
+        "east": {
+          "coords": [
+            0.01651,
+            0.0243
+          ],
+          "label": "Eastern portal"
+        }
+      }
+    },
+    {
+      "tunnel_id": "TUN-B",
+      "label": "Tunnel B",
+      "anonymised": true,
+      "length_m": 3400,
+      "rings_total": 2125,
+      "ring_length_m": 1.6,
+      "max_depth_m": 55,
+      "comment": "Fictitious tunnel. Alignment is synthetic and placed near 0°N 0°E (the 'Null Island' GIS placeholder) so that it cannot be mistaken for a real site.",
+      "alignment": [
+        [
+          -0.01,
+          0.0
+        ],
+        [
+          -0.00986,
+          0.0028
+        ],
+        [
+          -0.00976,
+          0.0056
+        ],
+        [
+          -0.00971,
+          0.00839
+        ],
+        [
+          -0.00975,
+          0.01117
+        ],
+        [
+          -0.00988,
+          0.01395
+        ],
+        [
+          -0.01012,
+          0.01671
+        ],
+        [
+          -0.01047,
+          0.01947
+        ],
+        [
+          -0.01092,
+          0.02222
+        ],
+        [
+          -0.01145,
+          0.02496
+        ],
+        [
+          -0.01204,
+          0.02769
+        ],
+        [
+          -0.01266,
+          0.03043
+        ]
+      ],
+      "portals": {
+        "west": {
+          "coords": [
+            -0.01,
+            0.0
+          ],
+          "label": "Western portal"
+        },
+        "east": {
+          "coords": [
+            -0.01266,
+            0.03043
+          ],
+          "label": "Eastern portal"
+        }
+      },
+      "river_crossings": [
+        {
+          "name": "River crossing",
+          "approx_chainage_m": 1600,
+          "approx_coords": [
+            -0.00988,
+            0.01395
+          ]
+        }
+      ]
+    }
+  ]
+}

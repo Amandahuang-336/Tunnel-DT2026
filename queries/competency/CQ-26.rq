@@ -1,0 +1,24 @@
+# CQ-26  Which standard clause prescribes the selected intervention?
+# Scenario 4: Compliance audit and traceability
+# Category: Compliance
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-1158-S
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?intervention ?clauseRef ?editionName
+WHERE {
+    tun:{DEFECT_ID} tun:sourceReference ?clause ;
+                    tun:hasThreshold ?threshold .
+    ?threshold tun:derivedFrom ?clause ;
+               tun:prescribesIntervention ?intervention .
+    ?clause std:clauseRef ?clauseRef ;
+            std:inEdition ?edition .
+    OPTIONAL { ?edition std:edition ?editionName . }
+}

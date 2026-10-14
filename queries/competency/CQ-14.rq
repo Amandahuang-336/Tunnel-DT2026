@@ -1,0 +1,30 @@
+# CQ-14  Has the diagnostic completeness score changed after adding thermal and GPR?
+# Scenario 2: Thermal anomaly triggers investigation of hidden moisture path
+# Category: Multimodal
+# Parameters: {DEFECT_ID}
+# Defaults:   DEFECT_ID=D-1247-L
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+# Completeness from the visual modalities alone versus all modalities.
+SELECT ?evidenceSet (COUNT(DISTINCT ?profLevel) / 4 AS ?completeness)
+       (GROUP_CONCAT(DISTINCT ?profLevel; separator=", ") AS ?coveredLevels)
+WHERE {
+    VALUES ?evidenceSet { "RGB + RGBD only" "with Thermal and GPR" }
+    tun:{DEFECT_ID} tun:hasIndicator/tun:isDetectedWith/rdfs:label ?profMod .
+    FILTER(?evidenceSet = "with Thermal and GPR" || ?profMod IN ("RGB", "RGBD"))
+    VALUES (?profMod ?profLevel) {
+        ("RGB"     "defect")
+        ("RGBD"    "defect")    ("RGBD"    "indicator")
+        ("Thermal" "cause")     ("Thermal" "indicator")
+        ("GPR"     "structure") ("GPR"     "indicator")
+    }
+}
+GROUP BY ?evidenceSet
+ORDER BY ?evidenceSet

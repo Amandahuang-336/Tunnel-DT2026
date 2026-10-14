@@ -1,0 +1,281 @@
+#################################################################
+#  standards_governance.ttl
+#
+#  Knowledge-base governance module — temporal portability.
+#
+#  Implements manuscript Section "Knowledge-base governance under
+#  standards revision", mechanisms (a) and (b):
+#
+#    (a) Edition-bound, time-boxed thresholds. A decision threshold is
+#        bound to a std:Clause of an identified std:StandardEdition and
+#        carries a validity interval. A revision ADDS threshold
+#        individuals; it never mutates existing ones, so the state of
+#        the knowledge base on any past date stays recoverable.
+#
+#    (b) Extraction-run provenance asserted in the graph using W3C
+#        PROV-O, rather than held in prose.
+#
+#  Loaded alongside tunnel_maintenance.ttl. Adds no class that the
+#  base ontology already defines; tun:StandardClause is refined here
+#  rather than redeclared.
+#
+#  NOTE ON CONTENT
+#  ---------------
+#  The only edition asserted is the 2009 AASHTO DCRT edition that the
+#  demonstration data actually cites. No successor edition is asserted
+#  and no validTo is set, because none is published. Values shown as
+#  "<...>" are placeholders populated at build time. Nothing in this
+#  file is a measurement or a result.
+#
+#  To evaluate a revision, load a second edition file (see
+#  ontology/editions/README.md) — the app's Governance page compares
+#  any two editions present in the graph.
+#################################################################
+
+@prefix tun:     <http://w3id.org/tunnel-dt/ontology/v1.2#> .
+@prefix std:     <http://w3id.org/tunnel-dt/governance#> .
+@prefix ed:      <http://w3id.org/tunnel-dt/governance/edition#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://w3id.org/tunnel-dt/governance>
+    a               owl:Ontology ;
+    owl:versionIRI  <http://w3id.org/tunnel-dt/governance/1.0.0> ;
+    dcterms:title   "Standards governance module for the tunnel maintenance ontology" ;
+    rdfs:comment    """Binds decision thresholds to dated clauses of identified
+standard editions and records extraction provenance. Gives the knowledge base a
+time axis without altering the seven-level FMEA chain or the modality mappings.""" .
+
+#################################################################
+#   Classes
+#################################################################
+
+std:StandardEdition a owl:Class ;
+    rdfs:label   "Standard edition" ;
+    rdfs:comment """A specific, dated edition of a published standard. Editions
+are never edited: a new edition is a new individual, linked to its predecessor
+by std:supersededBy.""" .
+
+std:Clause a owl:Class ;
+    rdfs:subClassOf tun:StandardClause ;
+    rdfs:label   "Clause" ;
+    rdfs:comment """A citable clause within one standard edition. The same clause
+number in two editions is two distinct individuals, because the text it carries
+may differ.""" .
+
+std:Threshold a owl:Class ;
+    rdfs:subClassOf tun:Threshold ;
+    rdfs:label   "Decision threshold" ;
+    rdfs:comment """An L6 decision criterion, bound to the clause of the specific
+edition that states it and valid over a stated interval.""" .
+
+std:ExtractionRun a owl:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label   "Extraction run" ;
+    rdfs:comment """One execution of the schema-guided extraction pipeline against
+one standards corpus, with engine, decoding configuration, prompt and
+controlled-vocabulary version recorded.""" .
+
+#################################################################
+#   Object properties
+#################################################################
+
+std:inEdition a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain std:Clause ; rdfs:range std:StandardEdition ;
+    rdfs:label "in edition" .
+
+std:supersededBy a owl:ObjectProperty ;
+    rdfs:domain std:StandardEdition ; rdfs:range std:StandardEdition ;
+    rdfs:label "superseded by" .
+
+std:derivedFrom a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain std:Threshold ; rdfs:range std:Clause ;
+    rdfs:label "derived from" ;
+    rdfs:comment """Binds a threshold to the clause of the specific edition that
+states it. This is the single axiom that makes a prescription reconstructible
+after a revision.""" .
+
+std:appliesToClass a owl:ObjectProperty ;
+    rdfs:domain std:Threshold ; rdfs:range tun:DefectCondition ;
+    rdfs:label "applies to defect class" .
+
+std:prescribesIntervention a owl:ObjectProperty ;
+    rdfs:subPropertyOf tun:prescribesIntervention ;
+    rdfs:domain std:Threshold ; rdfs:range tun:Intervention ;
+    rdfs:label "prescribes intervention" .
+
+#################################################################
+#   Datatype properties — edition and clause identity
+#################################################################
+
+std:publisher     a owl:DatatypeProperty ; rdfs:domain std:StandardEdition ; rdfs:range xsd:string .
+std:title         a owl:DatatypeProperty ; rdfs:domain std:StandardEdition ; rdfs:range xsd:string .
+std:edition       a owl:DatatypeProperty ; rdfs:domain std:StandardEdition ; rdfs:range xsd:string .
+std:effectiveFrom a owl:DatatypeProperty ; rdfs:domain std:StandardEdition ; rdfs:range xsd:date .
+std:clauseRef     a owl:DatatypeProperty ; rdfs:domain std:Clause ; rdfs:range xsd:string .
+
+std:textHash a owl:DatatypeProperty ;
+    rdfs:domain std:Clause ; rdfs:range xsd:string ;
+    rdfs:label "clause text hash" ;
+    rdfs:comment """SHA-256 of the normalised clause text. Detects a silent
+re-issue of a document under an unchanged clause number, which would otherwise be
+absorbed without review.""" .
+
+#################################################################
+#   Datatype properties — threshold validity and criterion
+#################################################################
+
+std:validFrom    a owl:DatatypeProperty ; rdfs:domain std:Threshold ; rdfs:range xsd:date .
+std:validTo      a owl:DatatypeProperty ; rdfs:domain std:Threshold ; rdfs:range xsd:date .
+std:onIndicator  a owl:DatatypeProperty ; rdfs:domain std:Threshold ; rdfs:range xsd:string .
+std:operator     a owl:DatatypeProperty ; rdfs:domain std:Threshold ; rdfs:range xsd:string .
+std:value        a owl:DatatypeProperty ; rdfs:domain std:Threshold ; rdfs:range xsd:decimal .
+std:unit         a owl:DatatypeProperty ; rdfs:domain std:Threshold ; rdfs:range xsd:string .
+std:tier         a owl:DatatypeProperty ; rdfs:domain std:Threshold ; rdfs:range xsd:string .
+std:criterionText a owl:DatatypeProperty ; rdfs:domain std:Threshold ; rdfs:range xsd:string .
+
+#################################################################
+#   Datatype properties — extraction provenance (mechanism (b))
+#################################################################
+
+std:engineId       a owl:DatatypeProperty ; rdfs:domain std:ExtractionRun ; rdfs:range xsd:string .
+std:engineVersion  a owl:DatatypeProperty ; rdfs:domain std:ExtractionRun ; rdfs:range xsd:string .
+std:decodingConfig a owl:DatatypeProperty ; rdfs:domain std:ExtractionRun ; rdfs:range xsd:string .
+std:promptHash     a owl:DatatypeProperty ; rdfs:domain std:ExtractionRun ; rdfs:range xsd:string .
+std:vocabVersion   a owl:DatatypeProperty ; rdfs:domain std:ExtractionRun ; rdfs:range xsd:string .
+
+#################################################################
+#   Edition in force
+#
+#   The 2009 AASHTO DCRT edition cited by the demonstration data.
+#   effectiveFrom is the edition year; no validTo, because no
+#   successor edition is published.
+#################################################################
+
+ed:AASHTO_DCRT_2009 a std:StandardEdition ;
+    std:publisher "AASHTO" ;
+    std:title     "Technical Manual for Design and Construction of Road Tunnels" ;
+    std:edition   "2009" ;
+    rdfs:label    "AASHTO DCRT (2009)" .
+
+ed:AS_3600 a std:StandardEdition ;
+    std:publisher "Standards Australia" ;
+    std:title     "AS 3600 Concrete structures" ;
+    std:edition   "as-cited" ;
+    rdfs:label    "AS 3600" ;
+    rdfs:comment  "Edition not stated in the source records; see Governance page." .
+
+#################################################################
+#   Clauses of that edition
+#
+#   One individual per clause reference appearing in the demonstration
+#   defect records. textHash is a build-time placeholder.
+#################################################################
+
+std:Clause_16_3_2_2009 a std:Clause ;
+    std:inEdition ed:AASHTO_DCRT_2009 ;
+    std:clauseRef "AASHTO Ch16 §16.3.2" ;
+    std:textHash  "<sha256 of normalised clause text>" ;
+    rdfs:label    "AASHTO Ch16 §16.3.2 (2009)" .
+
+std:Clause_16_4_3_2009 a std:Clause ;
+    std:inEdition ed:AASHTO_DCRT_2009 ;
+    std:clauseRef "AASHTO Ch16 §16.4.3" ;
+    std:textHash  "<sha256 of normalised clause text>" ;
+    rdfs:label    "AASHTO Ch16 §16.4.3 (2009)" .
+
+std:Clause_16_5_2009 a std:Clause ;
+    std:inEdition ed:AASHTO_DCRT_2009 ;
+    std:clauseRef "AASHTO Ch16 §16.5" ;
+    std:textHash  "<sha256 of normalised clause text>" ;
+    rdfs:label    "AASHTO Ch16 §16.5 (2009)" .
+
+std:Clause_Table_16_1_2009 a std:Clause ;
+    std:inEdition ed:AASHTO_DCRT_2009 ;
+    std:clauseRef "AASHTO Ch16 Table 16-1" ;
+    std:textHash  "<sha256 of normalised clause text>" ;
+    rdfs:label    "AASHTO Ch16 Table 16-1 (2009)" .
+
+std:Clause_AS3600 a std:Clause ;
+    std:inEdition ed:AS_3600 ;
+    std:clauseRef "AS 3600" ;
+    std:textHash  "<sha256 of normalised clause text>" ;
+    rdfs:label    "AS 3600 (as cited)" .
+
+#################################################################
+#   Thresholds in force under that edition
+#
+#   Each is bound to its clause and time-boxed open-ended. The
+#   criterion values reproduce the demonstration data's own
+#   threshold_triggered text; nothing new is asserted here.
+#################################################################
+
+std:Thr_SectionLoss_2009 a std:Threshold ;
+    rdfs:label            "Rebar section loss > 30%" ;
+    std:appliesToClass    tun:Spalls ;
+    std:onIndicator       "rebar_section_loss_pct" ;
+    std:operator          ">" ;
+    std:value             30 ;
+    std:unit              "%" ;
+    std:tier              "Action_Required" ;
+    std:criterionText     "Rebar section loss > 30% ⇒ structural analysis required" ;
+    std:derivedFrom       std:Clause_16_4_3_2009 ;
+    std:validFrom         "2009-01-01"^^xsd:date ;
+    prov:wasGeneratedBy   std:ExtractionRun_A .
+
+std:Thr_MoistureGS_2009 a std:Threshold ;
+    rdfs:label            "GS moisture state with void evidence" ;
+    std:appliesToClass    tun:LeakingJoints ;
+    std:onIndicator       "moisture_state" ;
+    std:operator          "=" ;
+    std:unit              "code" ;
+    std:tier              "Action_Required" ;
+    std:criterionText     "GS moisture with void evidence — sequenced repair required" ;
+    std:derivedFrom       std:Clause_16_3_2_2009 ;
+    std:validFrom         "2009-01-01"^^xsd:date ;
+    prov:wasGeneratedBy   std:ExtractionRun_A .
+
+std:Thr_CrackWidth_2009 a std:Threshold ;
+    rdfs:label            "Crack assessment" ;
+    std:appliesToClass    tun:Cracks ;
+    std:onIndicator       "crack_width_mm" ;
+    std:operator          ">" ;
+    std:value             0.3 ;
+    std:unit              "mm" ;
+    std:tier              "Monitor_Closely" ;
+    std:criterionText     "Crack width assessment per AASHTO Ch16 §16.5" ;
+    std:derivedFrom       std:Clause_16_5_2009 ;
+    std:validFrom         "2009-01-01"^^xsd:date ;
+    prov:wasGeneratedBy   std:ExtractionRun_A .
+
+std:Thr_MoistureState_2009 a std:Threshold ;
+    rdfs:label            "Moisture state classification" ;
+    std:appliesToClass    tun:Staining ;
+    std:onIndicator       "moisture_state" ;
+    std:operator          "=" ;
+    std:unit              "code" ;
+    std:tier              "Monitor_Closely" ;
+    std:criterionText     "Moisture state per AASHTO Ch16 Table 16-1" ;
+    std:derivedFrom       std:Clause_Table_16_1_2009 ;
+    std:validFrom         "2009-01-01"^^xsd:date ;
+    prov:wasGeneratedBy   std:ExtractionRun_A .
+
+#################################################################
+#   Extraction provenance (mechanism (b))
+#################################################################
+
+std:ExtractionRun_A a std:ExtractionRun ;
+    rdfs:label            "Schema-guided FMEA extraction, run A" ;
+    prov:used             ed:AASHTO_DCRT_2009 ;
+    prov:wasAssociatedWith std:Reviewer_LeadEngineer ;
+    std:engineId          "<extraction engine id>" ;
+    std:decodingConfig    "temperature=0" ;
+    std:promptHash        "<sha256 of system prompt>" ;
+    std:vocabVersion      "<controlled-vocabulary release>" .
+
+std:Reviewer_LeadEngineer a prov:Agent ;
+    rdfs:label "Lead engineering reviewer (four-criteria validation)" .

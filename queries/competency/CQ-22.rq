@@ -1,0 +1,24 @@
+# CQ-22  Which defects have multiple failure modes co-occurring at the same asset?
+# Scenario 3: Prioritisation across multiple defects in a tunnel section
+# Category: Defect
+# Parameters: none
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+# Failure mechanisms recorded per asset (lining ring or reference
+# component). coOccurring is "yes" where an asset carries more than one.
+SELECT ?asset (COUNT(DISTINCT ?mechanism) AS ?failureModes)
+       (IF(COUNT(DISTINCT ?mechanism) > 1, "yes", "no") AS ?coOccurring)
+       (GROUP_CONCAT(DISTINCT STRAFTER(STR(?defect), "#"); separator=", ") AS ?defects)
+WHERE {
+    ?defect tun:locatedAt ?asset ;
+            tun:hasMechanism ?mechanism .
+}
+GROUP BY ?asset
+ORDER BY DESC(?failureModes) ?asset

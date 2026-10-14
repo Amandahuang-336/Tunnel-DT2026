@@ -1,0 +1,1784 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix std: <http://w3id.org/tunnel-dt/governance#> .
+@prefix tun: <http://w3id.org/tunnel-dt/ontology/v1.2#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tun:D-0614-L a tun:Staining,
+        owl:NamedIndividual ;
+    tun:atChainage 410.1 ;
+    tun:atPosition "Left sidewall" ;
+    tun:atRingID 614 ;
+    tun:completenessScore 0.75 ;
+    tun:deadlineDays 365 ;
+    tun:discoveredOn "2024-03-15"^^xsd:date ;
+    tun:estimatedCost 1200.0 ;
+    tun:hasCause tun:Cause-D-0614-L ;
+    tun:hasDescription "PM calcification, historical leak (no active moisture)" ;
+    tun:hasIndicator tun:Indicator-D-0614-L-GPR,
+        tun:Indicator-D-0614-L-RGB,
+        tun:Indicator-D-0614-L-Thermal ;
+    tun:hasMechanism tun:Mechanism-D-0614-L ;
+    tun:hasObservation tun:Observation-D-0614-L-GPR,
+        tun:Observation-D-0614-L-RGB,
+        tun:Observation-D-0614-L-RGBD,
+        tun:Observation-D-0614-L-Thermal ;
+    tun:hasPriority "LOW" ;
+    tun:hasSeverity "Minor" ;
+    tun:hasThreshold tun:Threshold-D-0614-L ;
+    tun:hasType "Staining" ;
+    tun:isDetectedWith tun:Technique-GPR,
+        tun:Technique-RGB,
+        tun:Technique-RGBD,
+        tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-614 ;
+    tun:sourceReference std:Clause_Table_16_1_2009 .
+
+tun:D-0756-C a tun:Cracks,
+        owl:NamedIndividual ;
+    tun:atChainage 504.2 ;
+    tun:atPosition "Right sidewall" ;
+    tun:atRingID 756 ;
+    tun:completenessScore 0.5 ;
+    tun:deadlineDays 180 ;
+    tun:discoveredOn "2024-03-15"^^xsd:date ;
+    tun:estimatedCost 2100.0 ;
+    tun:hasCause tun:Cause-D-0756-C ;
+    tun:hasDescription "Transverse crack, dormant, 0.4mm wide, dry" ;
+    tun:hasIndicator tun:Indicator-D-0756-C-RGB,
+        tun:Indicator-D-0756-C-RGBD ;
+    tun:hasMechanism tun:Mechanism-D-0756-C ;
+    tun:hasObservation tun:Observation-D-0756-C-GPR,
+        tun:Observation-D-0756-C-RGB,
+        tun:Observation-D-0756-C-RGBD,
+        tun:Observation-D-0756-C-Thermal ;
+    tun:hasPriority "MEDIUM" ;
+    tun:hasSeverity "Low" ;
+    tun:hasThreshold tun:Threshold-D-0756-C ;
+    tun:hasType "Cracks" ;
+    tun:isDetectedWith tun:Technique-GPR,
+        tun:Technique-RGB,
+        tun:Technique-RGBD,
+        tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-756 ;
+    tun:sourceReference std:Clause_16_5_2009 .
+
+tun:D-0923-C a tun:Cracks,
+        owl:NamedIndividual ;
+    tun:atChainage 615.3 ;
+    tun:atPosition "Left sidewall lower" ;
+    tun:atRingID 923 ;
+    tun:completenessScore 0.5 ;
+    tun:discoveredOn "2024-03-15"^^xsd:date ;
+    tun:hasCause tun:Cause-D-0923-C ;
+    tun:hasDescription "Active diagonal crack, 0.9mm wide, moisture M" ;
+    tun:hasIndicator tun:Indicator-D-0923-C-RGB,
+        tun:Indicator-D-0923-C-RGBD ;
+    tun:hasMechanism tun:Mechanism-D-0923-C ;
+    tun:hasObservation tun:Observation-D-0923-C-GPR,
+        tun:Observation-D-0923-C-RGB,
+        tun:Observation-D-0923-C-RGBD,
+        tun:Observation-D-0923-C-Thermal ;
+    tun:hasPriority "HIGH" ;
+    tun:hasSeverity "Medium" ;
+    tun:hasThreshold tun:Threshold-D-0923-C ;
+    tun:hasType "Cracks" ;
+    tun:isDetectedWith tun:Technique-GPR,
+        tun:Technique-RGB,
+        tun:Technique-RGBD,
+        tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-923 ;
+    tun:sourceReference std:Clause_16_5_2009 .
+
+tun:D-1089-C a tun:Cracks,
+        owl:NamedIndividual ;
+    tun:atChainage 726.0 ;
+    tun:atPosition "Crown" ;
+    tun:atRingID 1089 ;
+    tun:completenessScore 0.25 ;
+    tun:discoveredOn "2024-03-15"^^xsd:date ;
+    tun:hasCause tun:Cause-D-1089-C ;
+    tun:hasDescription "Transverse hairline crack, dry" ;
+    tun:hasIndicator tun:Indicator-D-1089-C-RGB ;
+    tun:hasMechanism tun:Mechanism-D-1089-C ;
+    tun:hasObservation tun:Observation-D-1089-C-GPR,
+        tun:Observation-D-1089-C-RGB,
+        tun:Observation-D-1089-C-RGBD,
+        tun:Observation-D-1089-C-Thermal ;
+    tun:hasPriority "LOW" ;
+    tun:hasSeverity "Minor" ;
+    tun:hasThreshold tun:Threshold-D-1089-C ;
+    tun:hasType "Cracks" ;
+    tun:isDetectedWith tun:Technique-GPR,
+        tun:Technique-RGB,
+        tun:Technique-RGBD,
+        tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-1089 ;
+    tun:sourceReference std:Clause_AS3600 .
+
+tun:D-1158-S a tun:Spalls,
+        owl:NamedIndividual ;
+    tun:atChainage 772.0 ;
+    tun:atPosition "Crown" ;
+    tun:atRingID 1158 ;
+    tun:completenessScore 0.75 ;
+    tun:deadlineDays 30 ;
+    tun:discoveredOn "2024-03-15"^^xsd:date ;
+    tun:estimatedCost 34800.0 ;
+    tun:hasCause tun:Cause-D-1158-S ;
+    tun:hasDescription "S-3 spall with rebar exposed and suspected section loss" ;
+    tun:hasIndicator tun:Indicator-D-1158-S-GPR,
+        tun:Indicator-D-1158-S-RGB,
+        tun:Indicator-D-1158-S-RGBD ;
+    tun:hasMechanism tun:Mechanism-D-1158-S ;
+    tun:hasObservation tun:Observation-D-1158-S-GPR,
+        tun:Observation-D-1158-S-RGB,
+        tun:Observation-D-1158-S-RGBD ;
+    tun:hasPriority "HIGH" ;
+    tun:hasSeverity "S-3" ;
+    tun:hasThreshold tun:Threshold-D-1158-S,
+        tun:Threshold-D-1158-S-SectionLoss30 ;
+    tun:hasType "Spalls" ;
+    tun:isDetectedWith tun:Technique-GPR,
+        tun:Technique-RGB,
+        tun:Technique-RGBD ;
+    tun:locatedAt tun:Structure-Ring-1158 ;
+    tun:sourceReference std:Clause_16_4_3_2009 .
+
+tun:D-1247-L a tun:LeakingJoints,
+        owl:NamedIndividual ;
+    tun:atChainage 849.82 ;
+    tun:atPosition "Right sidewall lower" ;
+    tun:atRingID 1247 ;
+    tun:completenessScore 1.0 ;
+    tun:deadlineDays 30 ;
+    tun:discoveredOn "2024-03-15"^^xsd:date ;
+    tun:estimatedCost 18200.0 ;
+    tun:hasCause tun:Cause-D-1247-L ;
+    tun:hasDescription "Leaking construction joint with void behind lining" ;
+    tun:hasIndicator tun:Indicator-D-1247-L-GPR,
+        tun:Indicator-D-1247-L-RGB,
+        tun:Indicator-D-1247-L-RGBD,
+        tun:Indicator-D-1247-L-Thermal ;
+    tun:hasMechanism tun:Mechanism-D-1247-L ;
+    tun:hasObservation tun:Observation-D-1247-L-GPR,
+        tun:Observation-D-1247-L-RGB,
+        tun:Observation-D-1247-L-RGBD,
+        tun:Observation-D-1247-L-Thermal ;
+    tun:hasPriority "HIGH" ;
+    tun:hasSeverity "Medium" ;
+    tun:hasThreshold tun:Threshold-D-1247-L ;
+    tun:hasType "LeakingJoints" ;
+    tun:isDetectedWith tun:Technique-GPR,
+        tun:Technique-RGB,
+        tun:Technique-RGBD,
+        tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-1247 ;
+    tun:sourceReference std:Clause_16_3_2_2009 .
+
+tun:D-1402-L a tun:LeakingJoints,
+        owl:NamedIndividual ;
+    tun:atChainage 934.7 ;
+    tun:atPosition "Crown" ;
+    tun:atRingID 1402 ;
+    tun:completenessScore 0.75 ;
+    tun:deadlineDays 90 ;
+    tun:discoveredOn "2024-03-15"^^xsd:date ;
+    tun:estimatedCost 8500.0 ;
+    tun:hasCause tun:Cause-D-1402-L ;
+    tun:hasDescription "Leaking construction joint, M moisture state" ;
+    tun:hasIndicator tun:Indicator-D-1402-L-GPR,
+        tun:Indicator-D-1402-L-RGB,
+        tun:Indicator-D-1402-L-Thermal ;
+    tun:hasMechanism tun:Mechanism-D-1402-L ;
+    tun:hasObservation tun:Observation-D-1402-L-GPR,
+        tun:Observation-D-1402-L-RGB,
+        tun:Observation-D-1402-L-RGBD,
+        tun:Observation-D-1402-L-Thermal ;
+    tun:hasPriority "MEDIUM" ;
+    tun:hasSeverity "Low" ;
+    tun:hasThreshold tun:Threshold-D-1402-L ;
+    tun:hasType "LeakingJoints" ;
+    tun:isDetectedWith tun:Technique-GPR,
+        tun:Technique-RGB,
+        tun:Technique-RGBD,
+        tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-1402 ;
+    tun:sourceReference std:Clause_Table_16_1_2009 .
+
+tun:DEF-COR-SPALL-01 a tun:DefectCondition,
+        owl:NamedIndividual ;
+    rdfs:label "Spalls/delamination with exposed corroded rebar and section loss" ;
+    tun:hasCause tun:CAUSE-GW-COR-01 ;
+    tun:hasDescription "Concrete spalling and delamination exposing corroded reinforcement with measurable section loss. Spalls and delaminations may occur in concert and are almost always found in association with structural cracks." ;
+    tun:hasIndicator tun:IND-COR-REBAR-LOSS-01,
+        tun:IND-COR-SPALL-AREA-01,
+        tun:IND-COR-SPALL-DEPTH-01,
+        tun:IND-COR-SPALL-MOIST-01,
+        tun:IND-COR-SPALL-REBAR-CODE-01 ;
+    tun:hasMechanism tun:MECH-COR-01 ;
+    tun:hasThreshold tun:THRESH-COR-REBAR-30PCT,
+        tun:THRESH-COR-SPALL-S2 ;
+    tun:locatedAt tun:COMP-LIN-CONC-01 .
+
+tun:DEF-COR-STEEL-PENETRATION-01 a tun:DefectCondition,
+        owl:NamedIndividual ;
+    rdfs:label "Through-corrosion / holes in liner plates and deformed/corroded flanges" ;
+    tun:hasCause tun:CAUSE-COR-STEEL-01 ;
+    tun:hasDescription "Penetration of the liner segment due to rusting through; deformed flanges from corrosion or impact; galvanic corrosion at bolted connections caused by dissimilar metal contact" ;
+    tun:hasIndicator tun:IND-COR-STEEL-FLANGE-01,
+        tun:IND-COR-STEEL-PENETRATION-01 ;
+    tun:hasMechanism tun:MECH-COR-02 ;
+    tun:hasThreshold tun:THRESH-COR-STEEL-PENETRATION ;
+    tun:locatedAt tun:COMP-LIN-STEEL-SEG-01 .
+
+tun:DEF-CRACK-STRUCT-01 a tun:DefectCondition,
+        owl:NamedIndividual ;
+    rdfs:label "Structural cracks in concrete tunnel liner" ;
+    tun:hasCause tun:CAUSE-STRUCT-CRACK-01 ;
+    tun:hasDescription "Cracks resulting from structural movement such as settlement. Most common defect found in concrete tunnel liners. Must be distinguished from thermal/shrinkage cracks which should not be structurally rebonded." ;
+    tun:hasIndicator tun:IND-CRACK-MOVEMENT-01,
+        tun:IND-CRACK-TYPE-01 ;
+    tun:hasMechanism tun:MECH-STRUCT-CRACK-01 ;
+    tun:hasThreshold tun:THRESH-CRACK-ACTIVE,
+        tun:THRESH-CRACK-DORMANT ;
+    tun:locatedAt tun:COMP-LIN-CONC-03 .
+
+tun:DEF-HANG-FAIL-01 a tun:DefectCondition,
+        owl:NamedIndividual ;
+    rdfs:label "Corroded/broken hanger components and failed anchor connections" ;
+    tun:hasCause tun:CAUSE-HANG-COR-01 ;
+    tun:hasDescription "Broken or damaged hanger rods, clevises, turnbuckles, or connection pins. Failed or loose connections at tunnel arch, particularly adhesive anchors under sustained overhead tension." ;
+    tun:hasIndicator tun:IND-HANG-RING-TEST-01,
+        tun:IND-HANG-VISUAL-01 ;
+    tun:hasMechanism tun:MECH-COR-03 ;
+    tun:hasThreshold tun:THRESH-HANG-NO-RING ;
+    tun:locatedAt tun:COMP-CEIL-HANG-01 .
+
+tun:DEF-LEAK-CRACK-01 a tun:DefectCondition,
+        owl:NamedIndividual ;
+    rdfs:label "Leaking cracks and joints in tunnel liner" ;
+    tun:hasCause tun:CAUSE-GW-LEAK-01 ;
+    tun:hasDescription "Full-depth cracks or failed construction joints allowing groundwater infiltration ranging from surface moisture to continuous flowing water. Uncontrolled and excessive water accelerates corrosion and deterioration of the tunnel liner." ;
+    tun:hasIndicator tun:IND-LEAK-CRACK-WIDTH-01,
+        tun:IND-LEAK-FLOW-RATE-01,
+        tun:IND-LEAK-JOINT-MOVEMENT-01,
+        tun:IND-LEAK-MOIST-STATE-01 ;
+    tun:hasMechanism tun:MECH-LEAK-01 ;
+    tun:hasThreshold tun:THRESH-LEAK-GS,
+        tun:THRESH-LEAK-MOVEMENT ;
+    tun:locatedAt tun:COMP-LIN-CONC-02 .
+
+tun:DEF-ROCK-FALL-01 a tun:DefectCondition,
+        owl:NamedIndividual ;
+    rdfs:label "Deteriorated rock reinforcement and falling rock fragments" ;
+    tun:hasCause tun:CAUSE-ROCK-DETERIOR-01 ;
+    tun:hasDescription "Rock reinforcement elements losing strength due to corrosion, and loose rock fragments falling from tunnel roof and walls onto roadway" ;
+    tun:hasIndicator tun:IND-ROCK-LOOSE-01,
+        tun:IND-ROCK-REINF-COND-01 ;
+    tun:hasMechanism tun:MECH-COR-ROCK-REINF-01 ;
+    tun:hasThreshold tun:THRESH-ROCK-LOOSE-PRESENT ;
+    tun:locatedAt tun:COMP-ROCK-UNLINED-01 .
+
+std:Clause-AASHTO-Ch15-instrumentation-catalogue a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO Ch15 instrumentation catalogue" ;
+    std:clauseRef "AASHTO Ch15 instrumentation catalogue" .
+
+std:Clause-AASHTO-DCRT-Ch16-Section-16-10-FHWA-Technical-Advisory-2008 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Section 16.10, FHWA Technical Advisory 2008" ;
+    std:clauseRef "AASHTO DCRT Ch16 Section 16.10, FHWA Technical Advisory 2008" .
+
+std:Clause-AASHTO-DCRT-Ch16-Sections-16-3-1-16-3-2-Table-16-2 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Sections 16.3.1-16.3.2, Table 16-2" ;
+    std:clauseRef "AASHTO DCRT Ch16 Sections 16.3.1-16.3.2, Table 16-2" .
+
+std:Clause-AASHTO-DCRT-Ch16-Sections-16-4-1-16-4-5 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Sections 16.4.1-16.4.5" ;
+    std:clauseRef "AASHTO DCRT Ch16 Sections 16.4.1-16.4.5" .
+
+tun:CAUSE-COR-STEEL-01 a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Chemical_Exposure" ;
+    tun:status "Established" ;
+    rdfs:comment "Corrosive tunnel environment causing rusting of steel/cast iron plates. Galvanic corrosion at bolted connections caused by dissimilar metal contact between high-strength bolt and liner plate." .
+
+tun:CAUSE-GW-COR-01 a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Groundwater" ;
+    tun:status "Established" ;
+    rdfs:comment "Groundwater intrusion and moisture (M, GS, F conditions), often with chlorides or carbonation leading to rust, expansion, cracking, delamination, and spalling. Also documented instances from impact, insufficient concrete cover, or poor quality control." .
+
+tun:CAUSE-GW-LEAK-01 a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Groundwater" ;
+    tun:status "Established" ;
+    rdfs:comment "Groundwater pressure acting on tunnel liner through construction joints, failed gaskets, or full-depth structural cracks. Site-specific factors include pH, hardness, chemical composition, and turbidity of groundwater, as well as physical conditions that created the defect, potential for freeze-thaw, and hydrostatic head." .
+
+tun:CAUSE-HANG-COR-01 a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Chemical_Exposure" ;
+    tun:status "Established" ;
+    rdfs:comment "Corrosive tunnel environment degrading steel hanger components. For adhesive (chemical) anchors: potential loss of capacity under sustained tension in overhead applications due to creep, moisture intrusion, or improper installation." .
+
+tun:CAUSE-ROCK-DETERIOR-01 a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Chemical_Exposure" ;
+    tun:status "Established" ;
+    rdfs:comment "Corrosive tunnel environment causing deterioration of rock reinforcement elements. Natural weathering and stress relief causing loosening of rock fragments over time." .
+
+tun:CAUSE-STRUCT-CRACK-01 a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Settlement" ;
+    tun:status "Probable" ;
+    rdfs:comment "Structural stresses not accounted for in the original design, such as differential settlement, structural overload, or ground movement. Distinct from thermal/shrinkage stresses." .
+
+tun:COMP-CEIL-HANG-01 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Ceiling Hangers and Hardware" ;
+    rdfs:comment "Steel hanger rods, clevises, turnbuckles, pins, and anchors (cast-in-place inserts or post-installed mechanical/adhesive anchors)" .
+
+tun:COMP-LIN-CONC-01 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete Tunnel Lining" ;
+    rdfs:comment "Concrete lining (rebar, embedded steel)" .
+
+tun:COMP-LIN-CONC-02 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete Tunnel Lining - Joints and Cracks" ;
+    rdfs:comment "Cast-in-place or precast concrete lining" .
+
+tun:COMP-LIN-CONC-03 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete Tunnel Lining - Structural Cracks" ;
+    rdfs:comment "Cast-in-place or precast concrete lining" .
+
+tun:COMP-LIN-STEEL-SEG-01 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Steel/Cast Iron Segmental Liner" ;
+    rdfs:comment "Steel or cast-iron segmental lining" .
+
+tun:COMP-ROCK-UNLINED-01 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Unlined Rock Tunnel (rock mass and reinforcement)" ;
+    rdfs:comment "Rock reinforcement (rock dowels, rock bolts, cable bolts) with resin or cementitious grout in competent rock" .
+
+tun:Cause-D-0614-L a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Historical leak, since addressed" ;
+    rdfs:comment "Historical leak, since addressed" .
+
+tun:Cause-D-0756-C a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Construction-phase shrinkage (dormant)" ;
+    rdfs:comment "Construction-phase shrinkage (dormant)" .
+
+tun:Cause-D-0923-C a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Ground movement — active; root cause investigation required" ;
+    rdfs:comment "Ground movement — active; root cause investigation required" .
+
+tun:Cause-D-1089-C a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Early-age thermal or drying shrinkage" ;
+    rdfs:comment "Early-age thermal or drying shrinkage" .
+
+tun:Cause-D-1158-S a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Chloride-induced rebar corrosion with section loss" ;
+    rdfs:comment "Chloride-induced rebar corrosion with section loss" .
+
+tun:Cause-D-1247-L a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Hydrostatic pressure driving water through void behind lining" ;
+    rdfs:comment "Hydrostatic pressure driving water through void behind lining" .
+
+tun:Cause-D-1402-L a tun:PotentialCause,
+        owl:NamedIndividual ;
+    rdfs:label "Joint sealant degradation" ;
+    rdfs:comment "Joint sealant degradation" .
+
+tun:IND-COR-SPALL-AREA-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Spall surface area" ;
+    tun:indicatorType "Dimensional" ;
+    tun:unit "sq ft" ;
+    rdfs:comment "Visual condition survey with area measurement" .
+
+tun:IND-COR-SPALL-MOIST-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Moisture state at defect" ;
+    tun:indicatorType "Visual" ;
+    tun:unit "categorical" ;
+    rdfs:comment "Standardised visual condition survey using US leakage coding system" .
+
+tun:IND-COR-SPALL-REBAR-CODE-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Rebar exposure code" ;
+    tun:indicatorType "Visual" ;
+    tun:unit "categorical" ;
+    rdfs:comment "Visual identification of reinforcing steel exposure and estimated section loss percentage" .
+
+tun:IND-COR-STEEL-FLANGE-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Flange deformation and corrosion" ;
+    tun:indicatorType "Visual" ;
+    tun:unit "categorical (deformed/corroded/intact)" ;
+    rdfs:comment "Visual inspection of flange condition and bolt connections" .
+
+tun:IND-CRACK-TYPE-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Crack type classification" ;
+    tun:indicatorType "Visual" ;
+    tun:unit "categorical" ;
+    rdfs:comment "Engineering assessment to distinguish thermal/shrinkage cracks from structural cracks. Structural analysis of tunnel lining should be performed." .
+
+tun:IND-HANG-VISUAL-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Visual condition of hanger components" ;
+    tun:indicatorType "Visual" ;
+    tun:unit "categorical" ;
+    rdfs:comment "Close visual inspection of hanger rod, clevis, turnbuckle, pins, and anchor connection for corrosion, breakage, deformation" .
+
+tun:IND-LEAK-CRACK-WIDTH-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Crack width" ;
+    tun:indicatorType "Dimensional" ;
+    tun:unit "mm or inches" ;
+    rdfs:comment "Direct measurement of crack opening" .
+
+tun:IND-LEAK-FLOW-RATE-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Water flow volume" ;
+    tun:indicatorType "Dimensional" ;
+    tun:unit "volume per time (project specific)" ;
+    rdfs:comment "Volume measurement required for Flowing (F) classification" .
+
+tun:IND-ROCK-REINF-COND-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Rock reinforcement condition" ;
+    tun:indicatorType "Visual" ;
+    tun:unit "categorical" ;
+    rdfs:comment "Visual assessment of bolt heads, plates, and exposed elements for corrosion. Requires engineering geologist or geotechnical engineer with geologic mapping experience." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Remove all unsound concrete using chipping hammers (limited to less than 30 lbs including bit to prevent over-excavation of concrete above 4000 psi) or hydro-demolition. Do not use hydro-demolition near electrical equipment, cables, or mechanical equipment." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 2 ;
+    rdfs:comment "Ensure no feather edges at repair boundaries; maintain vertical shoulder of at least 1/8 inch to prevent spalling at edge of new repair." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-03 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 3 ;
+    rdfs:comment "Seal any leaking cracks or construction joints with chemical grout (single component polyurethane recommended) prior to rebar coating and shotcrete application." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-04 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 4 ;
+    rdfs:comment "Clean all reinforcing steel and exposed structural steel elements to white metal commercial grade." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-05 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 5 ;
+    rdfs:comment "Evaluate rebar for section loss. If loss exceeds 30%, perform structural analysis. If analysis shows inadequate strength, replace damaged bars using mechanical couplers (not lap splices)." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-06 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 6 ;
+    rdfs:comment "Apply zinc-rich coating to cleaned steel within 48 hours of cleaning and not more than 30 days prior to shotcrete application. Zinc-rich preferred over epoxy as it does not form a bond-breaker." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-07 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 7 ;
+    rdfs:comment "For small shallow spalls (< 2 sq ft, S-1): Apply polymer modified hand patch mortar in lifts of 1 to 2 inches, keyed into substrate using J-hooks and welded wire mesh." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-08 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 8 ;
+    rdfs:comment "For larger/deeper repairs (S-2, S-3, S-4): Place hot-dipped galvanized welded wire mesh over repair area to within 2 inches of repair edge, attached to existing rebar and substrate using J-hooks. Use 2x2 inch mesh for dry process shotcrete, 4x4 inch mesh for wet process." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-09 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 9 ;
+    rdfs:comment "Apply polymer modified fibrous shotcrete (wet process for partial tunnel closures due to low dust; dry process only for full closures). Nozzleman and crew must be tested and certified on site mock-ups." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-10 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 10 ;
+    rdfs:comment "Allow shotcrete to cure 20-30 minutes then screed and trowel to desired finish. Do not work surface prematurely. Monitor drying rate as times vary with wind and humidity." .
+
+tun:INT-COR-CONC-REPAIR-01-Step-11 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 11 ;
+    rdfs:comment "Apply curing compound to surface of new shotcrete per manufacturer recommendation to prevent rapid drying." .
+
+tun:INT-COR-STEEL-SEG-01 a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Steel/cast iron segmental liner repair" ;
+    tun:hasStep tun:INT-COR-STEEL-SEG-01-Step-01,
+        tun:INT-COR-STEEL-SEG-01-Step-02,
+        tun:INT-COR-STEEL-SEG-01-Step-03,
+        tun:INT-COR-STEEL-SEG-01-Step-04,
+        tun:INT-COR-STEEL-SEG-01-Step-05 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-6-2 ;
+    tun:status "Repair" ;
+    rdfs:comment "Steel/cast iron segmental liner repair" .
+
+tun:INT-COR-STEEL-SEG-01-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 1 ;
+    rdfs:comment "For deformed flanges: reshape flanges with hammers or heat." .
+
+tun:INT-COR-STEEL-SEG-01-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 2 ;
+    rdfs:comment "For holes in STEEL segments (post-1923, weldable): weld on a new plate per AWS D1.1 Structural Welding Code." .
+
+tun:INT-COR-STEEL-SEG-01-Step-03 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 3 ;
+    rdfs:comment "For holes in CAST IRON segments (not weldable): braze repair plate to cast iron, OR drill and tap the liner segment and bolt the repair plate to the original segment. Alternative: fill area between flanges with shotcrete." .
+
+tun:INT-COR-STEEL-SEG-01-Step-04 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 4 ;
+    rdfs:comment "For corroded bolted connections with galvanic corrosion: replace entire bolted connection. Install nylon isolation gasket to prevent contact between high-strength bolt and liner plate. Use nylon washers on both sides and plastic sleeve." .
+
+tun:INT-COR-STEEL-SEG-01-Step-05 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 5 ;
+    rdfs:comment "All welded repairs must comply with AWS D1.1/D1.1 Structural Welding Code. All bolted repairs must comply with AASHTO specifications." .
+
+tun:INT-CRACK-REBOND-01-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Confirm crack is dormant (no ongoing movement) through monitoring period." .
+
+tun:INT-CRACK-REBOND-01-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 2 ;
+    rdfs:comment "Perform structural analysis to ascertain if crack requires rebonding." .
+
+tun:INT-CRACK-REBOND-01-Step-03 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 3 ;
+    rdfs:comment "Select appropriate resin: Amine or Polyester resin preferred for tunnel work (both unaffected by moisture and bond to surface-saturated concrete). Vinyl ester resin only suitable if crack is completely dry." .
+
+tun:INT-CRACK-REBOND-01-Step-04 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 4 ;
+    rdfs:comment "Install injection ports at approximately 300mm (12 inch) spacing along crack, starting at lower elevation." .
+
+tun:INT-CRACK-REBOND-01-Step-05 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 5 ;
+    rdfs:comment "Seal surface of crack with epoxy sealer between injection ports." .
+
+tun:INT-CRACK-REBOND-01-Step-06 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 6 ;
+    rdfs:comment "Inject resin into lowest port using hydraulic pump until resin appears at next port above." .
+
+tun:INT-CRACK-REBOND-01-Step-07 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 7 ;
+    rdfs:comment "Progress injection upward, filling consecutively to opposite end of crack." .
+
+tun:INT-CRACK-REBOND-01-Step-08 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 8 ;
+    rdfs:comment "Follow manufacturer recommendations, particularly for overhead installations." .
+
+tun:INT-CRACK-REBOND-01-Step-09 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 9 ;
+    rdfs:comment "Cracks with flowing water must be carefully injected per manufacturer guidance." .
+
+tun:INT-HANG-REPAIR-01 a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Ceiling hanger component replacement and anchor remediation" ;
+    tun:hasStep tun:INT-HANG-REPAIR-01-Step-01,
+        tun:INT-HANG-REPAIR-01-Step-02,
+        tun:INT-HANG-REPAIR-01-Step-03,
+        tun:INT-HANG-REPAIR-01-Step-04 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-10-FHWA-Technical-Advisory-2008 ;
+    tun:status "Replacement" ;
+    rdfs:comment "Ceiling hanger component replacement and anchor remediation" .
+
+tun:INT-HANG-REPAIR-01-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 1 ;
+    rdfs:comment "For broken/damaged hanger rod, clevis, turnbuckle, or connection pins: replace with similar components." .
+
+tun:INT-HANG-REPAIR-01-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 2 ;
+    rdfs:comment "For failed adhesive (chemical) anchors: replace with undercut mechanical anchors (per FHWA Technical Advisory 2008 which strongly discourages adhesive anchors for permanent sustained tension or overhead applications)." .
+
+tun:INT-HANG-REPAIR-01-Step-03 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 3 ;
+    rdfs:comment "Any use of adhesive anchors must conform to current FHWA directives and other applicable codes and regulations." .
+
+tun:INT-HANG-REPAIR-01-Step-04 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 4 ;
+    rdfs:comment "Verify replacement hanger is in tension using ringing test after installation." .
+
+tun:INT-LEAK-GROUT-01-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Assess site-specific conditions: pH, hardness, chemical composition, turbidity of groundwater; physical conditions of defect; movement potential; water inflow rate." .
+
+tun:INT-LEAK-GROUT-01-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 2 ;
+    rdfs:comment "If movement of crack/joint is suspected, monitor the defect for a sufficient period to estimate actual movement." .
+
+tun:INT-LEAK-GROUT-01-Step-03 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 3 ;
+    rdfs:comment "Select grout type based on conditions: (a) For active wet cracks/joints with movement: single component water-reactive polyurethane (hydrophilic if seasonally wet but currently dry; hydrophobic if chemical catalyst preferred). (b) For dry, non-moving defects: epoxy grout for structural rebonding. (c) Particle grouts only for formation grouting outside liner or very large dry cracks." .
+
+tun:INT-LEAK-GROUT-01-Step-04 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 4 ;
+    rdfs:comment "Drill injection holes at 45-degree angle through the defect, spaced alternately on either side at a distance equal to half the thickness of the structural element." .
+
+tun:INT-LEAK-GROUT-01-Step-05 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 5 ;
+    rdfs:comment "Flush all holes with water to clean debris and clean crack/joint sides prior to injection to ensure proper bonding." .
+
+tun:INT-LEAK-GROUT-01-Step-06 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 6 ;
+    rdfs:comment "Install mechanical packers in injection ports." .
+
+tun:INT-LEAK-GROUT-01-Step-07 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 7 ;
+    rdfs:comment "Seal surface of crack with low-modulus gel if crack is actively leaking." .
+
+tun:INT-LEAK-GROUT-01-Step-08 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 8 ;
+    rdfs:comment "Inject grout into lowest mechanical packer using hand-operated hydraulic pump until grout is seen at next injection port up." .
+
+tun:INT-LEAK-GROUT-01-Step-09 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 9 ;
+    rdfs:comment "Repeat process progressively upward until entire crack is injected." .
+
+tun:INT-LEAK-GROUT-01-Step-10 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 10 ;
+    rdfs:comment "Regrouting may be performed up to one week after initial grouting if needed." .
+
+tun:INT-ROCK-REINF-01 a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Rock scaling and reinforcement replacement" ;
+    tun:hasStep tun:INT-ROCK-REINF-01-Step-01,
+        tun:INT-ROCK-REINF-01-Step-02,
+        tun:INT-ROCK-REINF-01-Step-03,
+        tun:INT-ROCK-REINF-01-Step-04 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-9 ;
+    tun:status "Rehabilitation" ;
+    rdfs:comment "Rock scaling and reinforcement replacement" .
+
+tun:INT-ROCK-REINF-01-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Perform detailed investigation of structural geology by engineering geologist or geotechnical engineer with experience in geologic mapping and rock stability analysis." .
+
+tun:INT-ROCK-REINF-01-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 2 ;
+    rdfs:comment "Scale (remove) all loose rock from tunnel roof and walls using backhoe or hoe ram on periodic basis." .
+
+tun:INT-ROCK-REINF-01-Step-03 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 3 ;
+    rdfs:comment "Replace deteriorated rock reinforcement elements (bolts, dowels, cables) with new elements grouted with resin or cementitious grout." .
+
+tun:INT-ROCK-REINF-01-Step-04 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:stepOrder 4 ;
+    rdfs:comment "Alternative containment measures: install steel liner roof as shelter, additional rock bolts with wire mesh to contain falling fragments, or apply shotcrete to areas of concern." .
+
+tun:Indicator-D-0614-L-GPR a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "GPR indicator for D-0614-L" ;
+    tun:atFMEALevel tun:StructureLevel ;
+    tun:confidence 0.85 ;
+    tun:hasValue "No void, no moisture reflection" ;
+    tun:indicatorType "Structure" ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:unit "m" .
+
+tun:Indicator-D-0614-L-RGB a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGB indicator for D-0614-L" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.87 ;
+    tun:hasValue "PM calcification deposits" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:unit "categorical" .
+
+tun:Indicator-D-0614-L-Thermal a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Thermal indicator for D-0614-L" ;
+    tun:atFMEALevel tun:PotentialCauseLevel ;
+    tun:confidence 0.9 ;
+    tun:hasValue "ΔT < 0.2°C" ;
+    tun:indicatorType "Cause" ;
+    tun:isDetectedWith tun:Technique-Thermal ;
+    tun:unit "degC" .
+
+tun:Indicator-D-0756-C-RGB a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGB indicator for D-0756-C" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.9 ;
+    tun:hasValue "Transverse crack, dry" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:unit "categorical" .
+
+tun:Indicator-D-0756-C-RGBD a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGBD indicator for D-0756-C" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.93 ;
+    tun:hasValue "Width 0.4mm, length 1.8m" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:unit "mm|m" .
+
+tun:Indicator-D-0923-C-RGB a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGB indicator for D-0923-C" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.89 ;
+    tun:hasValue "Diagonal crack pattern, M moisture" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:unit "m" .
+
+tun:Indicator-D-0923-C-RGBD a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGBD indicator for D-0923-C" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.94 ;
+    tun:hasValue "Width 0.9mm, length 2.4m" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:unit "mm|m" .
+
+tun:Indicator-D-1089-C-RGB a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGB indicator for D-1089-C" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.78 ;
+    tun:hasValue "Hairline, dry D state" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:unit "categorical" .
+
+tun:Indicator-D-1158-S-GPR a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "GPR indicator for D-1158-S" ;
+    tun:atFMEALevel tun:StructureLevel ;
+    tun:confidence 0.82 ;
+    tun:hasValue "Rebar cover 28mm (designed 45mm)" ;
+    tun:indicatorType "Structure" ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:unit "mm|m" .
+
+tun:Indicator-D-1158-S-RGB a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGB indicator for D-1158-S" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.88 ;
+    tun:hasValue "Visible spall, exposed rebar" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:unit "categorical" .
+
+tun:Indicator-D-1158-S-RGBD a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGBD indicator for D-1158-S" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.93 ;
+    tun:hasValue "Depth 58mm, area 112 cm²" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:unit "mm|cm2|cm|m" .
+
+tun:Indicator-D-1247-L-GPR a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "GPR indicator for D-1247-L" ;
+    tun:atFMEALevel tun:StructureLevel ;
+    tun:confidence 0.79 ;
+    tun:hasValue "36.3cm depth, 25cm wide" ;
+    tun:indicatorType "Structure" ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:unit "cm|m" .
+
+tun:Indicator-D-1247-L-RGB a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGB indicator for D-1247-L" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.92 ;
+    tun:hasValue "GS moisture, 0.58m trail" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:unit "m" .
+
+tun:Indicator-D-1247-L-RGBD a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGBD indicator for D-1247-L" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.95 ;
+    tun:hasValue "Extent 63.4 cm²" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:unit "cm2|cm|m" .
+
+tun:Indicator-D-1247-L-Thermal a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Thermal indicator for D-1247-L" ;
+    tun:atFMEALevel tun:PotentialCauseLevel ;
+    tun:confidence 0.87 ;
+    tun:hasValue "ΔT -2.8°C at source" ;
+    tun:indicatorType "Cause" ;
+    tun:isDetectedWith tun:Technique-Thermal ;
+    tun:unit "degC" .
+
+tun:Indicator-D-1402-L-GPR a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "GPR indicator for D-1402-L" ;
+    tun:atFMEALevel tun:StructureLevel ;
+    tun:confidence 0.88 ;
+    tun:hasValue "Clean interface" ;
+    tun:indicatorType "Structure" ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:unit "categorical" .
+
+tun:Indicator-D-1402-L-RGB a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "RGB indicator for D-1402-L" ;
+    tun:atFMEALevel tun:MeasuredIndicatorLevel ;
+    tun:confidence 0.85 ;
+    tun:hasValue "M moisture, no active flow" ;
+    tun:indicatorType "Indicator" ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:unit "m" .
+
+tun:Indicator-D-1402-L-Thermal a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Thermal indicator for D-1402-L" ;
+    tun:atFMEALevel tun:PotentialCauseLevel ;
+    tun:confidence 0.71 ;
+    tun:hasValue "ΔT -0.8°C, marginal" ;
+    tun:indicatorType "Cause" ;
+    tun:isDetectedWith tun:Technique-Thermal ;
+    tun:unit "m|degC" .
+
+tun:Intervention-D-0614-L a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Case prescription for D-0614-L" ;
+    tun:hasStep tun:Intervention-D-0614-L-Step-01 ;
+    rdfs:comment "Ordered intervention plan for D-0614-L" .
+
+tun:Intervention-D-0614-L-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    dcterms:source "Maintenance manual" ;
+    tun:rationale "Aesthetic only" ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Cosmetic surface cleaning (pressure wash or chemical)" .
+
+tun:Intervention-D-0756-C a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Case prescription for D-0756-C" ;
+    tun:hasStep tun:Intervention-D-0756-C-Step-01,
+        tun:Intervention-D-0756-C-Step-02 ;
+    rdfs:comment "Ordered intervention plan for D-0756-C" .
+
+tun:Intervention-D-0756-C-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Crack is dormant — safe to rebond" ;
+    tun:sourceReference std:Clause_16_5_2009 ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Structural epoxy injection (low pressure)" .
+
+tun:Intervention-D-0756-C-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    dcterms:source "Supplier spec" ;
+    tun:rationale "Ensures full penetration" ;
+    tun:stepOrder 2 ;
+    rdfs:comment "Port injection technique" .
+
+tun:Intervention-D-0923-C a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Case prescription for D-0923-C" ;
+    tun:hasStep tun:Intervention-D-0923-C-Step-01,
+        tun:Intervention-D-0923-C-Step-02,
+        tun:Intervention-D-0923-C-Step-03 ;
+    rdfs:comment "Ordered intervention plan for D-0923-C" .
+
+tun:Intervention-D-0923-C-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Rebonding causes repair failure" ;
+    tun:sourceReference std:Clause_16_5_2009 ;
+    tun:stepOrder 1 ;
+    rdfs:comment "DO NOT rebond active crack" .
+
+tun:Intervention-D-0923-C-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Confirm movement state" ;
+    tun:sourceReference std:Clause-AASHTO-Ch15-instrumentation-catalogue ;
+    tun:stepOrder 2 ;
+    rdfs:comment "Install crack monitoring (grid gauge or LVDT) for 90 days" .
+
+tun:Intervention-D-0923-C-Step-03 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Address cause before structural repair" ;
+    tun:sourceReference std:Clause_16_5_2009 ;
+    tun:stepOrder 3 ;
+    rdfs:comment "Investigate root cause: settlement, overloading, ground movement" .
+
+tun:Intervention-D-1089-C a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Case prescription for D-1089-C" ;
+    tun:hasStep tun:Intervention-D-1089-C-Step-01 ;
+    rdfs:comment "Ordered intervention plan for D-1089-C" .
+
+tun:Intervention-D-1089-C-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Below intervention threshold" ;
+    tun:sourceReference std:Clause_AS3600 ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Record location, monitor in next inspection cycle" .
+
+tun:Intervention-D-1158-S a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Case prescription for D-1158-S" ;
+    tun:hasStep tun:Intervention-D-1158-S-Step-01,
+        tun:Intervention-D-1158-S-Step-02,
+        tun:Intervention-D-1158-S-Step-03,
+        tun:Intervention-D-1158-S-Step-04,
+        tun:Intervention-D-1158-S-Step-05 ;
+    rdfs:comment "Ordered intervention plan for D-1158-S" .
+
+tun:Intervention-D-1158-S-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Required by AASHTO §16.4.3 for S-3" ;
+    tun:sourceReference std:Clause_16_4_3_2009 ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Measure actual rebar section loss at repair site" .
+
+tun:Intervention-D-1158-S-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "May require full segment replacement" ;
+    tun:sourceReference std:Clause_16_4_3_2009 ;
+    tun:stepOrder 2 ;
+    rdfs:comment "If section loss > 30% — structural analysis required" .
+
+tun:Intervention-D-1158-S-Step-03 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Avoid further damage" ;
+    tun:sourceReference std:Clause-AASHTO-Ch16-16-4 ;
+    tun:stepOrder 3 ;
+    rdfs:comment "Remove unsound concrete with chipping hammers <30 lb" .
+
+tun:Intervention-D-1158-S-Step-04 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Corrosion prevention" ;
+    tun:sourceReference std:Clause-AASHTO-Ch16-16-4 ;
+    tun:stepOrder 4 ;
+    rdfs:comment "Clean rebar to white metal, apply zinc coating within 48 hrs" .
+
+tun:Intervention-D-1158-S-Step-05 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Structural requirement for S-3" ;
+    tun:sourceReference std:Clause_16_4_3_2009 ;
+    tun:stepOrder 5 ;
+    rdfs:comment "Rebuild with mechanical couplers — NOT lap splices" .
+
+tun:Intervention-D-1247-L a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Case prescription for D-1247-L" ;
+    tun:hasStep tun:Intervention-D-1247-L-Step-01,
+        tun:Intervention-D-1247-L-Step-02,
+        tun:Intervention-D-1247-L-Step-03,
+        tun:Intervention-D-1247-L-Step-04 ;
+    rdfs:comment "Ordered intervention plan for D-1247-L" .
+
+tun:Intervention-D-1247-L-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    dcterms:source "Domain practice" ;
+    tun:rationale "Required by GPR-detected void. Skipping this causes surface repair to fail." ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Formation grouting through void" .
+
+tun:Intervention-D-1247-L-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    dcterms:source "Supplier spec" ;
+    tun:rationale "Material-dependent" ;
+    tun:stepOrder 2 ;
+    rdfs:comment "Wait 48-72 hours for grout cure" .
+
+tun:Intervention-D-1247-L-Step-03 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    tun:rationale "Standard joint sealing" ;
+    tun:sourceReference std:Clause_16_3_2_2009 ;
+    tun:stepOrder 3 ;
+    rdfs:comment "Surface sealing at construction joint with polyurethane grout" .
+
+tun:Intervention-D-1247-L-Step-04 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    dcterms:source "QA protocol" ;
+    tun:rationale "Confirms pathway eliminated" ;
+    tun:stepOrder 4 ;
+    rdfs:comment "Leak verification test after 7 days (RGB + thermal)" .
+
+tun:Intervention-D-1402-L a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Case prescription for D-1402-L" ;
+    tun:hasStep tun:Intervention-D-1402-L-Step-01,
+        tun:Intervention-D-1402-L-Step-02 ;
+    rdfs:comment "Ordered intervention plan for D-1402-L" .
+
+tun:Intervention-D-1402-L-Step-01 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    dcterms:source "Standard practice" ;
+    tun:rationale "M moisture with no void" ;
+    tun:stepOrder 1 ;
+    rdfs:comment "Surface sealant refresh at joint" .
+
+tun:Intervention-D-1402-L-Step-02 a tun:InterventionStep,
+        owl:NamedIndividual ;
+    dcterms:source "QA protocol" ;
+    tun:rationale "Monitor progression" ;
+    tun:stepOrder 2 ;
+    rdfs:comment "Re-inspect in 6 months" .
+
+tun:MECH-COR-01 a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Corrosion" ;
+    rdfs:comment "Corrosion of embedded reinforcing steel due to chloride ingress, carbonation, or moisture penetration, leading to expansion of corrosion products, cracking, delamination, and spalling of cover concrete" .
+
+tun:MECH-COR-02 a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Corrosion" ;
+    rdfs:comment "Corrosion of steel or cast iron segmental liner plates and flanges, including through-corrosion of liner plate and galvanic corrosion at bolted connections due to dissimilar metal contact" .
+
+tun:MECH-COR-03 a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Corrosion" ;
+    rdfs:comment "Corrosion and deterioration of ceiling hanger rods, clevises, turnbuckles, connection pins, and anchor connections in tunnel environment. Adhesive (chemical) anchors may lose capacity over time under sustained tension in overhead applications." .
+
+tun:MECH-COR-ROCK-REINF-01 a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Corrosion" ;
+    rdfs:comment "Rock reinforcement elements (bolts, dowels, cables) deteriorate and lose strength due to corrosive tunnel environment and exposure. Rock fragments also become loose over time and drop onto roadway." .
+
+tun:MECH-LEAK-01 a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Leakage_Water" ;
+    rdfs:comment "Groundwater intrusion through construction joints, liner gaskets, and full-depth cracks in the tunnel liner. May be aggravated by hydrostatic pressure, seasonal variation, and crack/joint movement." .
+
+tun:MECH-STRUCT-CRACK-01 a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Structural_Movement_Overload" ;
+    rdfs:comment "Structural cracking due to stresses not accounted for in design (e.g., differential settlement, structural overload). Distinct from thermal/shrinkage cracks which are non-structural." .
+
+tun:Mechanism-D-0614-L a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Past moisture migration (now sealed)" ;
+    rdfs:comment "Past moisture migration (now sealed)" .
+
+tun:Mechanism-D-0756-C a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Shrinkage or thermal cracking" ;
+    rdfs:comment "Shrinkage or thermal cracking" .
+
+tun:Mechanism-D-0923-C a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Structural cracking from differential settlement" ;
+    rdfs:comment "Structural cracking from differential settlement" .
+
+tun:Mechanism-D-1089-C a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Hairline shrinkage cracking" ;
+    rdfs:comment "Hairline shrinkage cracking" .
+
+tun:Mechanism-D-1158-S a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Corrosion-induced spalling of concrete lining" ;
+    rdfs:comment "Corrosion-induced spalling of concrete lining" .
+
+tun:Mechanism-D-1247-L a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Groundwater intrusion through construction joint" ;
+    rdfs:comment "Groundwater intrusion through construction joint" .
+
+tun:Mechanism-D-1402-L a tun:FailureMechanism,
+        owl:NamedIndividual ;
+    rdfs:label "Minor groundwater seepage at construction joint" ;
+    rdfs:comment "Minor groundwater seepage at construction joint" .
+
+tun:Observation-D-0614-L-GPR a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.85 ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:locatedAt tun:Structure-Ring-614 ;
+    tun:provisionalClass "Staining" ;
+    tun:status "Clean" ;
+    rdfs:comment "No void, no moisture reflection" .
+
+tun:Observation-D-0614-L-RGB a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.87 ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:locatedAt tun:Structure-Ring-614 ;
+    tun:provisionalClass "Staining" ;
+    tun:status "Confirmed" ;
+    rdfs:comment "PM calcification deposits" .
+
+tun:Observation-D-0614-L-RGBD a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.0 ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:locatedAt tun:Structure-Ring-614 ;
+    tun:provisionalClass "Staining" ;
+    tun:status "Not deployed" .
+
+tun:Observation-D-0614-L-Thermal a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.9 ;
+    tun:isDetectedWith tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-614 ;
+    tun:provisionalClass "Staining" ;
+    tun:status "No signature" ;
+    rdfs:comment "ΔT < 0.2°C" .
+
+tun:Observation-D-0756-C-GPR a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.0 ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:locatedAt tun:Structure-Ring-756 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Not deployed" .
+
+tun:Observation-D-0756-C-RGB a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.9 ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:locatedAt tun:Structure-Ring-756 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Confirmed" ;
+    rdfs:comment "Transverse crack, dry" .
+
+tun:Observation-D-0756-C-RGBD a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.93 ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:locatedAt tun:Structure-Ring-756 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Measured" ;
+    rdfs:comment "Width 0.4mm, length 1.8m" .
+
+tun:Observation-D-0756-C-Thermal a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.0 ;
+    tun:isDetectedWith tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-756 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Not deployed" .
+
+tun:Observation-D-0923-C-GPR a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.0 ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:locatedAt tun:Structure-Ring-923 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Not deployed" .
+
+tun:Observation-D-0923-C-RGB a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.89 ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:locatedAt tun:Structure-Ring-923 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Confirmed" ;
+    rdfs:comment "Diagonal crack pattern, M moisture" .
+
+tun:Observation-D-0923-C-RGBD a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.94 ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:locatedAt tun:Structure-Ring-923 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Measured" ;
+    rdfs:comment "Width 0.9mm, length 2.4m" .
+
+tun:Observation-D-0923-C-Thermal a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.0 ;
+    tun:isDetectedWith tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-923 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Not deployed" .
+
+tun:Observation-D-1089-C-GPR a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.0 ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:locatedAt tun:Structure-Ring-1089 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Not deployed" .
+
+tun:Observation-D-1089-C-RGB a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.78 ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:locatedAt tun:Structure-Ring-1089 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Confirmed" ;
+    rdfs:comment "Hairline, dry D state" .
+
+tun:Observation-D-1089-C-RGBD a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.0 ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:locatedAt tun:Structure-Ring-1089 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Below resolution" .
+
+tun:Observation-D-1089-C-Thermal a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.0 ;
+    tun:isDetectedWith tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-1089 ;
+    tun:provisionalClass "Cracks" ;
+    tun:status "Not deployed" .
+
+tun:Observation-D-1158-S-GPR a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.82 ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:locatedAt tun:Structure-Ring-1158 ;
+    tun:provisionalClass "Spalls" ;
+    tun:status "Cover reduced" ;
+    rdfs:comment "Rebar cover 28mm (designed 45mm)" .
+
+tun:Observation-D-1158-S-RGB a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.88 ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:locatedAt tun:Structure-Ring-1158 ;
+    tun:provisionalClass "Spalls" ;
+    tun:status "Confirmed" ;
+    rdfs:comment "Visible spall, exposed rebar" .
+
+tun:Observation-D-1158-S-RGBD a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.93 ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:locatedAt tun:Structure-Ring-1158 ;
+    tun:provisionalClass "Spalls" ;
+    tun:status "Measured" ;
+    rdfs:comment "Depth 58mm, area 112 cm²" .
+
+tun:Observation-D-1247-L-GPR a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.79 ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:locatedAt tun:Structure-Ring-1247 ;
+    tun:provisionalClass "LeakingJoints" ;
+    tun:status "Void detected" ;
+    rdfs:comment "36.3cm depth, 25cm wide" .
+
+tun:Observation-D-1247-L-RGB a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.92 ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:locatedAt tun:Structure-Ring-1247 ;
+    tun:provisionalClass "LeakingJoints" ;
+    tun:status "Confirmed" ;
+    rdfs:comment "GS moisture, 0.58m trail" .
+
+tun:Observation-D-1247-L-RGBD a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.95 ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:locatedAt tun:Structure-Ring-1247 ;
+    tun:provisionalClass "LeakingJoints" ;
+    tun:status "Measured" ;
+    rdfs:comment "Extent 63.4 cm²" .
+
+tun:Observation-D-1247-L-Thermal a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.87 ;
+    tun:isDetectedWith tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-1247 ;
+    tun:provisionalClass "LeakingJoints" ;
+    tun:status "Active leak" ;
+    rdfs:comment "ΔT -2.8°C at source" .
+
+tun:Observation-D-1402-L-GPR a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.88 ;
+    tun:isDetectedWith tun:Technique-GPR ;
+    tun:locatedAt tun:Structure-Ring-1402 ;
+    tun:provisionalClass "LeakingJoints" ;
+    tun:status "No void" ;
+    rdfs:comment "Clean interface" .
+
+tun:Observation-D-1402-L-RGB a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.85 ;
+    tun:isDetectedWith tun:Technique-RGB ;
+    tun:locatedAt tun:Structure-Ring-1402 ;
+    tun:provisionalClass "LeakingJoints" ;
+    tun:status "Confirmed" ;
+    rdfs:comment "M moisture, no active flow" .
+
+tun:Observation-D-1402-L-RGBD a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.0 ;
+    tun:isDetectedWith tun:Technique-RGBD ;
+    tun:locatedAt tun:Structure-Ring-1402 ;
+    tun:provisionalClass "LeakingJoints" ;
+    tun:status "Not deployed" .
+
+tun:Observation-D-1402-L-Thermal a tun:DefectObservation,
+        owl:NamedIndividual ;
+    tun:confidence 0.71 ;
+    tun:isDetectedWith tun:Technique-Thermal ;
+    tun:locatedAt tun:Structure-Ring-1402 ;
+    tun:provisionalClass "LeakingJoints" ;
+    tun:status "Slight signature" ;
+    rdfs:comment "ΔT -0.8°C, marginal" .
+
+tun:THRESH-COR-STEEL-PENETRATION a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "Any through-corrosion or holes in liner plate" ;
+    tun:derivedFrom std:Clause-AASHTO-DCRT-Ch16-Section-16-6-2 ;
+    tun:onIndicator tun:IND-COR-STEEL-PENETRATION-01 ;
+    tun:operator "exists" ;
+    tun:prescribesIntervention tun:INT-COR-STEEL-SEG-01 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-6-2 ;
+    tun:tier tun:Action_Required ;
+    tun:unit "presence" ;
+    tun:value "Any through-corrosion or holes in liner plate" ;
+    rdfs:comment "Repair required: weld new plate (steel post-1923) or braze/bolt repair plate (cast iron)" .
+
+tun:THRESH-HANG-NO-RING a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "NO_RING (does not ring when struck)" ;
+    tun:derivedFrom std:Clause-AASHTO-DCRT-Ch16-Section-16-10 ;
+    tun:onIndicator tun:IND-HANG-RING-TEST-01 ;
+    tun:operator "=" ;
+    tun:prescribesIntervention tun:INT-HANG-REPAIR-01 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-10 ;
+    tun:tier tun:Investigation_Required ;
+    tun:unit "acoustic test result" ;
+    tun:value "NO_RING (does not ring when struck)" ;
+    rdfs:comment "Hangers that exhibit a defect or lack of tension should be closely inspected and checked for structural suitability." .
+
+tun:THRESH-LEAK-MOVEMENT a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "Any measurable movement in crack or joint" ;
+    tun:derivedFrom std:Clause-AASHTO-DCRT-Ch16-Sections-16-3-2-16-5 ;
+    tun:onIndicator tun:IND-LEAK-JOINT-MOVEMENT-01 ;
+    tun:operator "exists" ;
+    tun:prescribesIntervention tun:INT-LEAK-GROUT-01 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Sections-16-3-2-16-5 ;
+    tun:tier tun:Investigation_Required ;
+    tun:unit "presence/absence of movement" ;
+    tun:value "Any measurable movement in crack or joint" ;
+    rdfs:comment "If movement detected: only chemical grout is appropriate (particle grout will fracture and leak will reappear). Structural cracks with settlement that are no longer moving may be structurally rebonded." .
+
+tun:THRESH-ROCK-LOOSE-PRESENT a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "Loose rock fragments identified on roof or walls" ;
+    tun:derivedFrom std:Clause-AASHTO-DCRT-Ch16-Section-16-9 ;
+    tun:onIndicator tun:IND-ROCK-LOOSE-01 ;
+    tun:operator "=" ;
+    tun:prescribesIntervention tun:INT-ROCK-REINF-01 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-9 ;
+    tun:tier tun:Action_Required ;
+    tun:unit "presence" ;
+    tun:value "Loose rock fragments identified on roof or walls" ;
+    rdfs:comment "Scale (remove) all loose rock from tunnel roof and walls. Consider additional reinforcement measures." .
+
+tun:Threshold-D-0614-L a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "PM state — cosmetic cleaning only" ;
+    tun:derivedFrom std:Clause_Table_16_1_2009 ;
+    tun:prescribesIntervention tun:Intervention-D-0614-L ;
+    tun:sourceReference std:Clause_Table_16_1_2009 ;
+    tun:status "Activated" ;
+    tun:tier tun:Monitor_Closely ;
+    tun:value "PM state — cosmetic cleaning only" ;
+    rdfs:comment "PM state — cosmetic cleaning only" .
+
+tun:Threshold-D-0756-C a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "Dormant crack, dry — epoxy rebond appropriate" ;
+    tun:derivedFrom std:Clause_16_5_2009 ;
+    tun:prescribesIntervention tun:Intervention-D-0756-C ;
+    tun:sourceReference std:Clause_16_5_2009 ;
+    tun:status "Activated" ;
+    tun:tier tun:Action_Required ;
+    tun:value "Dormant crack, dry — epoxy rebond appropriate" ;
+    rdfs:comment "Dormant crack, dry — epoxy rebond appropriate" ;
+    prov:wasDerivedFrom tun:THRESH-CRACK-DORMANT .
+
+tun:Threshold-D-0923-C a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "Active crack — DO NOT rebond; investigate cause first" ;
+    tun:derivedFrom std:Clause_16_5_2009 ;
+    tun:prescribesIntervention tun:Intervention-D-0923-C ;
+    tun:sourceReference std:Clause_16_5_2009 ;
+    tun:status "Activated" ;
+    tun:tier tun:Investigation_Required ;
+    tun:value "Active crack — DO NOT rebond; investigate cause first" ;
+    rdfs:comment "Active crack — DO NOT rebond; investigate cause first" ;
+    prov:wasDerivedFrom tun:THRESH-CRACK-ACTIVE .
+
+tun:Threshold-D-1089-C a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "Below action threshold — monitor only" ;
+    tun:derivedFrom std:Clause_AS3600 ;
+    tun:prescribesIntervention tun:Intervention-D-1089-C ;
+    tun:sourceReference std:Clause_AS3600 ;
+    tun:status "Activated" ;
+    tun:tier tun:Monitor_Closely ;
+    tun:value "Below action threshold — monitor only" ;
+    rdfs:comment "Below action threshold — monitor only" .
+
+tun:Threshold-D-1158-S a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "S-3 spall triggers structural analysis per AASHTO §16.4.3" ;
+    tun:derivedFrom std:Clause_16_4_3_2009 ;
+    tun:prescribesIntervention tun:Intervention-D-1158-S ;
+    tun:sourceReference std:Clause_16_4_3_2009 ;
+    tun:status "Activated" ;
+    tun:tier tun:Action_Required ;
+    tun:value "S-3 spall triggers structural analysis per AASHTO §16.4.3" ;
+    rdfs:comment "S-3 spall triggers structural analysis per AASHTO §16.4.3" ;
+    prov:wasDerivedFrom tun:THRESH-COR-SPALL-S2 .
+
+tun:Threshold-D-1158-S-SectionLoss30 a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "Rebar section loss > 30%" ;
+    tun:operator ">" ;
+    tun:status "NotEvaluable" ;
+    tun:tier tun:Investigation_Required ;
+    tun:unit "%" ;
+    tun:value 30 ;
+    rdfs:comment "Not evaluable: actual rebar section loss has not been measured." ;
+    prov:wasDerivedFrom tun:THRESH-COR-REBAR-30PCT .
+
+tun:Threshold-D-1247-L a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "GS moisture with void evidence — sequenced repair required" ;
+    tun:derivedFrom std:Clause_16_3_2_2009 ;
+    tun:prescribesIntervention tun:Intervention-D-1247-L ;
+    tun:sourceReference std:Clause_16_3_2_2009 ;
+    tun:status "Activated" ;
+    tun:tier tun:Action_Required ;
+    tun:value "GS moisture with void evidence — sequenced repair required" ;
+    rdfs:comment "GS moisture with void evidence — sequenced repair required" ;
+    prov:wasDerivedFrom tun:THRESH-LEAK-GS .
+
+tun:Threshold-D-1402-L a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "M moisture — thermal investigation recommended" ;
+    tun:derivedFrom std:Clause_Table_16_1_2009 ;
+    tun:prescribesIntervention tun:Intervention-D-1402-L ;
+    tun:sourceReference std:Clause_Table_16_1_2009 ;
+    tun:status "Activated" ;
+    tun:tier tun:Monitor_Closely ;
+    tun:value "M moisture — thermal investigation recommended" ;
+    rdfs:comment "M moisture — thermal investigation recommended" .
+
+std:Clause-AASHTO-Ch16-16-4 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO Ch16 §16.4" ;
+    std:clauseRef "AASHTO Ch16 §16.4" .
+
+std:Clause-AASHTO-DCRT-Ch16-Section-16-10 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Section 16.10" ;
+    std:clauseRef "AASHTO DCRT Ch16 Section 16.10" .
+
+std:Clause-AASHTO-DCRT-Ch16-Section-16-3 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Section 16.3" ;
+    std:clauseRef "AASHTO DCRT Ch16 Section 16.3" .
+
+std:Clause-AASHTO-DCRT-Ch16-Section-16-4 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Section 16.4" ;
+    std:clauseRef "AASHTO DCRT Ch16 Section 16.4" .
+
+std:Clause-AASHTO-DCRT-Ch16-Section-16-4-3 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Section 16.4.3" ;
+    std:clauseRef "AASHTO DCRT Ch16 Section 16.4.3" .
+
+std:Clause-AASHTO-DCRT-Ch16-Sections-16-3-2-16-5 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Sections 16.3.2, 16.5" ;
+    std:clauseRef "AASHTO DCRT Ch16 Sections 16.3.2, 16.5" .
+
+tun:IND-COR-REBAR-LOSS-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Rebar section loss percentage" ;
+    tun:indicatorType "Dimensional" ;
+    tun:unit "%" ;
+    rdfs:comment "Measurement of remaining rebar cross-section compared to design diameter after cleaning to white metal" .
+
+tun:IND-COR-SPALL-DEPTH-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Spall depth" ;
+    tun:indicatorType "Dimensional" ;
+    tun:unit "inches" ;
+    rdfs:comment "Direct measurement of depth from original surface to base of spall" .
+
+tun:IND-COR-STEEL-PENETRATION-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Liner plate penetration (through-corrosion)" ;
+    tun:indicatorType "Visual" ;
+    tun:unit "presence/absence, area of section loss" ;
+    rdfs:comment "Visual inspection for holes, section loss area estimation" .
+
+tun:IND-HANG-RING-TEST-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Hanger ringing test" ;
+    tun:indicatorType "Acoustic" ;
+    tun:unit "categorical (rings / does not ring)" ;
+    rdfs:comment "Strike each hanger with a mason's hammer. A hanger in tension will vibrate or ring like a bell. A hanger not in tension (due to connection or other defect) will not ring." .
+
+tun:IND-LEAK-JOINT-MOVEMENT-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Joint/crack movement" ;
+    tun:indicatorType "Deformation" ;
+    tun:unit "mm or inches" ;
+    rdfs:comment "Monitor the defect for a period of time sufficient to allow estimation of actual movement. Crack gages or repeated measurement." .
+
+tun:IND-LEAK-MOIST-STATE-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Leakage moisture state" ;
+    tun:indicatorType "Visual" ;
+    tun:unit "categorical (D/PM/M/GS/F)" ;
+    rdfs:comment "Visual condition survey using standardised US leakage coding (Table 16-1)" .
+
+tun:IND-ROCK-LOOSE-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Loose rock presence" ;
+    tun:indicatorType "Visual" ;
+    tun:unit "categorical (present/absent)" ;
+    rdfs:comment "Visual inspection and sounding of tunnel roof and walls for loose rock" .
+
+tun:INT-COR-CONC-REPAIR-01 a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete patch repair with rebar treatment and shotcrete" ;
+    tun:hasStep tun:INT-COR-CONC-REPAIR-01-Step-01,
+        tun:INT-COR-CONC-REPAIR-01-Step-02,
+        tun:INT-COR-CONC-REPAIR-01-Step-03,
+        tun:INT-COR-CONC-REPAIR-01-Step-04,
+        tun:INT-COR-CONC-REPAIR-01-Step-05,
+        tun:INT-COR-CONC-REPAIR-01-Step-06,
+        tun:INT-COR-CONC-REPAIR-01-Step-07,
+        tun:INT-COR-CONC-REPAIR-01-Step-08,
+        tun:INT-COR-CONC-REPAIR-01-Step-09,
+        tun:INT-COR-CONC-REPAIR-01-Step-10,
+        tun:INT-COR-CONC-REPAIR-01-Step-11 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Sections-16-4-1-16-4-5 ;
+    tun:status "Repair" ;
+    rdfs:comment "Concrete patch repair with rebar treatment and shotcrete" .
+
+tun:INT-CRACK-REBOND-01 a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Structural crack rebonding with epoxy resin injection" ;
+    tun:hasStep tun:INT-CRACK-REBOND-01-Step-01,
+        tun:INT-CRACK-REBOND-01-Step-02,
+        tun:INT-CRACK-REBOND-01-Step-03,
+        tun:INT-CRACK-REBOND-01-Step-04,
+        tun:INT-CRACK-REBOND-01-Step-05,
+        tun:INT-CRACK-REBOND-01-Step-06,
+        tun:INT-CRACK-REBOND-01-Step-07,
+        tun:INT-CRACK-REBOND-01-Step-08,
+        tun:INT-CRACK-REBOND-01-Step-09 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-5 ;
+    tun:status "Repair" ;
+    rdfs:comment "Structural crack rebonding with epoxy resin injection" .
+
+tun:INT-LEAK-GROUT-01 a tun:Intervention,
+        owl:NamedIndividual ;
+    rdfs:label "Chemical grout injection for leak sealing" ;
+    tun:hasStep tun:INT-LEAK-GROUT-01-Step-01,
+        tun:INT-LEAK-GROUT-01-Step-02,
+        tun:INT-LEAK-GROUT-01-Step-03,
+        tun:INT-LEAK-GROUT-01-Step-04,
+        tun:INT-LEAK-GROUT-01-Step-05,
+        tun:INT-LEAK-GROUT-01-Step-06,
+        tun:INT-LEAK-GROUT-01-Step-07,
+        tun:INT-LEAK-GROUT-01-Step-08,
+        tun:INT-LEAK-GROUT-01-Step-09,
+        tun:INT-LEAK-GROUT-01-Step-10 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Sections-16-3-1-16-3-2-Table-16-2 ;
+    tun:status "Waterproofing_Remediation" ;
+    rdfs:comment "Chemical grout injection for leak sealing" .
+
+tun:THRESH-COR-REBAR-30PCT a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "> 30%" ;
+    tun:derivedFrom std:Clause-AASHTO-DCRT-Ch16-Section-16-4-3 ;
+    tun:onIndicator tun:IND-COR-REBAR-LOSS-01 ;
+    tun:operator ">" ;
+    tun:prescribesIntervention tun:INT-COR-CONC-REPAIR-01 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-4-3 ;
+    tun:tier tun:Action_Required ;
+    tun:unit "% rebar section loss" ;
+    tun:value 30.0 ;
+    rdfs:comment "Structural analysis must be performed. If results indicate inadequate strength with remaining steel, damaged steel must be replaced." .
+
+tun:THRESH-COR-SPALL-S2 a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "Spall depth reaching reinforcing steel (S-2 classification)" ;
+    tun:derivedFrom std:Clause-AASHTO-DCRT-Ch16-Section-16-4 ;
+    tun:onIndicator tun:IND-COR-SPALL-DEPTH-01 ;
+    tun:operator "=" ;
+    tun:prescribesIntervention tun:INT-COR-CONC-REPAIR-01 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-4 ;
+    tun:tier tun:Action_Required ;
+    tun:unit "depth classification" ;
+    tun:value "Spall depth reaching reinforcing steel (S-2 classification)" ;
+    rdfs:comment "Requires rebar cleaning, coating, and shotcrete/mortar repair with welded wire mesh" .
+
+tun:THRESH-CRACK-ACTIVE a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "Any measurable ongoing movement" ;
+    tun:derivedFrom std:Clause-AASHTO-DCRT-Ch16-Section-16-5 ;
+    tun:onIndicator tun:IND-CRACK-MOVEMENT-01 ;
+    tun:operator "exists" ;
+    tun:prescribesIntervention tun:INT-CRACK-REBOND-01 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-5 ;
+    tun:tier tun:Investigation_Required ;
+    tun:unit "movement status" ;
+    tun:value "Any measurable ongoing movement" ;
+    rdfs:comment "DO NOT structurally rebond — crack will re-crack. Treat with flexible chemical grout if leaking. Investigate root cause of ongoing movement." .
+
+tun:THRESH-CRACK-DORMANT a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "No measurable movement over monitoring period (crack is dormant)" ;
+    tun:derivedFrom std:Clause-AASHTO-DCRT-Ch16-Section-16-5 ;
+    tun:onIndicator tun:IND-CRACK-MOVEMENT-01 ;
+    tun:operator "=" ;
+    tun:prescribesIntervention tun:INT-CRACK-REBOND-01 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-5 ;
+    tun:tier tun:Action_Required ;
+    tun:unit "movement status" ;
+    tun:value "Dormant" ;
+    rdfs:comment "Dormant structural crack may be structurally rebonded with epoxy resin injection. A structural analysis of the tunnel lining should be performed to ascertain if rebonding is required." .
+
+tun:THRESH-LEAK-GS a tun:Threshold,
+        owl:NamedIndividual ;
+    rdfs:label "GS (Glistening Surface) or F (Flowing)" ;
+    tun:derivedFrom std:Clause-AASHTO-DCRT-Ch16-Section-16-3 ;
+    tun:onIndicator tun:IND-LEAK-MOIST-STATE-01 ;
+    tun:operator "in" ;
+    tun:prescribesIntervention tun:INT-LEAK-GROUT-01 ;
+    tun:sourceReference std:Clause-AASHTO-DCRT-Ch16-Section-16-3 ;
+    tun:tier tun:Action_Required ;
+    tun:unit "moisture state code" ;
+    tun:value "GS|F" ;
+    rdfs:comment "Active water ingress requires sealing with chemical grout injection. Grout selection dependent on moisture content, movement potential, and crack width." .
+
+std:Clause-AASHTO-DCRT-Ch16-Section-16-6-2 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Section 16.6.2" ;
+    std:clauseRef "AASHTO DCRT Ch16 Section 16.6.2" .
+
+std:Clause-AASHTO-DCRT-Ch16-Section-16-9 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Section 16.9" ;
+    std:clauseRef "AASHTO DCRT Ch16 Section 16.9" .
+
+tun:IND-CRACK-MOVEMENT-01 a tun:MeasuredIndicator,
+        owl:NamedIndividual ;
+    rdfs:label "Crack movement monitoring" ;
+    tun:indicatorType "Deformation" ;
+    tun:unit "mm or inches" ;
+    rdfs:comment "Crack gages (grid type for visual monitoring or electrical LVDT type for remote/real-time monitoring). Any crack considered for structural rebonding must be monitored to assess if movement is occurring." .
+
+tun:Structure-Ring-1158 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete lining at Ring 1158" .
+
+std:Clause-AASHTO-DCRT-Ch16-Section-16-5 a std:Clause,
+        owl:NamedIndividual ;
+    rdfs:label "AASHTO DCRT Ch16 Section 16.5" ;
+    std:clauseRef "AASHTO DCRT Ch16 Section 16.5" .
+
+tun:Structure-Ring-1089 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete lining at Ring 1089" .
+
+tun:Structure-Ring-1247 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete lining at Ring 1247" .
+
+tun:Structure-Ring-1402 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete lining at Ring 1402" .
+
+tun:Structure-Ring-614 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete lining at Ring 614" .
+
+tun:Structure-Ring-756 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete lining at Ring 756" .
+
+tun:Structure-Ring-923 a tun:Structure,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete lining at Ring 923" .
+
+tun:Technique-Thermal a tun:MeasurementTechnique,
+        tun:Thermal,
+        owl:NamedIndividual ;
+    rdfs:label "Thermal" .
+
+tun:Technique-GPR a tun:GPR,
+        tun:MeasurementTechnique,
+        owl:NamedIndividual ;
+    rdfs:label "GPR" .
+
+tun:Technique-RGBD a tun:MeasurementTechnique,
+        tun:RGBD,
+        owl:NamedIndividual ;
+    rdfs:label "RGBD" .
+
+tun:Technique-RGB a tun:MeasurementTechnique,
+        tun:RGB,
+        owl:NamedIndividual ;
+    rdfs:label "RGB" .
+

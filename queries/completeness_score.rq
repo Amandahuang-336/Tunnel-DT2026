@@ -1,0 +1,10 @@
+PREFIX tun: <http://w3id.org/tunnel-dt/ontology/v1.2#>
+
+# Diagnostic completeness score recorded on a defect.
+# Replace {DEFECT_ID} with the target defect identifier.
+# queries/competency/CQ-04.rq also recomputes it from the modality profile.
+
+SELECT ?completenessScore
+WHERE {
+    tun:{DEFECT_ID} tun:completenessScore ?completenessScore .
+}

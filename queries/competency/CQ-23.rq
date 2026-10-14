@@ -1,0 +1,34 @@
+# CQ-23  Rank defects by priority considering condition state, completeness, and co-occurrence.
+# Scenario 3: Prioritisation across multiple defects in a tunnel section
+# Category: Maintenance
+# Parameters: none
+
+PREFIX tun:  <http://w3id.org/tunnel-dt/ontology/v1.2#>
+PREFIX std:  <http://w3id.org/tunnel-dt/governance#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?defect ?priority ?tier ?completeness ?coOccurring
+WHERE {
+    ?defect tun:hasPriority ?priority ;
+            tun:locatedAt ?asset .
+    OPTIONAL { ?defect tun:completenessScore ?completeness . }
+    OPTIONAL {
+        ?defect tun:hasThreshold ?t .
+        ?t tun:status "Activated" ;
+           tun:tier ?tier .
+    }
+    {
+        SELECT ?asset (COUNT(DISTINCT ?d) AS ?coOccurring)
+        WHERE { ?d tun:locatedAt ?asset ; tun:hasPriority ?p . }
+        GROUP BY ?asset
+    }
+    BIND(IF(?priority = "HIGH", 3, IF(?priority = "MEDIUM", 2, 1)) AS ?pRank)
+    BIND(IF(?tier = tun:Emergency, 5, IF(?tier = tun:Action_Required, 4,
+         IF(?tier = tun:Investigation_Required, 3,
+         IF(?tier = tun:Monitor_Closely, 2, 1)))) AS ?tRank)
+}
+ORDER BY DESC(?pRank) DESC(?tRank) DESC(?coOccurring) DESC(?completeness)
